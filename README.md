@@ -1,2 +1,2 @@
 # DOAN_CNPM
-Nơi các developers dành 10 điểm môn CNPM và LTMTWindow
+Nơi các developers giành 10 điểm môn CNPM và LTMTWindow
