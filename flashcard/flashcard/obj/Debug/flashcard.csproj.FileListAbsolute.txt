@@ -1,0 +1,10 @@
+E:\workspace\windowform\flashcard\flashcard\bin\Debug\flashcard.exe.config
+E:\workspace\windowform\flashcard\flashcard\bin\Debug\flashcard.exe
+E:\workspace\windowform\flashcard\flashcard\bin\Debug\flashcard.pdb
+E:\workspace\windowform\flashcard\flashcard\obj\Debug\flashcard.csproj.AssemblyReference.cache
+E:\workspace\windowform\flashcard\flashcard\obj\Debug\flashcard.Properties.Resources.resources
+E:\workspace\windowform\flashcard\flashcard\obj\Debug\flashcard.csproj.GenerateResource.cache
+E:\workspace\windowform\flashcard\flashcard\obj\Debug\flashcard.csproj.CoreCompileInputs.cache
+E:\workspace\windowform\flashcard\flashcard\obj\Debug\flashcard.exe
+E:\workspace\windowform\flashcard\flashcard\obj\Debug\flashcard.pdb
+E:\workspace\windowform\flashcard\flashcard\obj\Debug\flashcard.frm_main.resources
