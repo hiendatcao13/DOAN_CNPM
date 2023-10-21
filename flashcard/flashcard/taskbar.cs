@@ -10,14 +10,28 @@ namespace flashcard
 {
     public partial class frm_main : Form
     {
-        public void TaskBar()
+        public void TaskBar(ToolStrip tool)
         {
-            icon_logo();
-            icon_home();
-            icon_library();
-            icon_add();
+            icon_logo(tool);
+            icon_home(tool);
+            icon_library(tool);
+            icon_add(tool);
+            icon_export(tool);
+            icon_Help(tool);
         }
-        private void icon_logo() //tạo logo và có bo cong tròn
+        private void common_menustrip(ToolStripButton tool, ToolStrip menu)
+        {
+            tool.AutoSize = false;
+            menu.ImageScalingSize = new Size(75, 75);
+            tool.ImageTransparentColor = Color.Magenta;
+            tool.Size = new Size(96, 96);
+            tool.ImageScaling = ToolStripItemImageScaling.SizeToFit;
+            tool.Font = new Font("Comfortaa", 17, FontStyle.Bold);
+            tool.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+            tool.TextImageRelation = TextImageRelation.ImageAboveText;
+            menu.Items.Add(tool);
+        }
+        private void icon_logo(ToolStrip menu) //tạo logo và có bo cong tròn
         {
             PictureBox logo = new PictureBox();
             logo.Image = global::flashcard.Properties.Resources.logo;
@@ -32,57 +46,51 @@ namespace flashcard
             gp.AddEllipse(0, 0, logo.Width - 3, logo.Height - 3);
             Region rg = new Region(gp);
             logo.Region = rg;
-            Controls.Add(logo);
+            this.Controls.Add(logo);
             logo.BringToFront();
         }
-        private void icon_home()
+        private void icon_home(ToolStrip menu)
         {
-            ToolStripButton iconHome = new System.Windows.Forms.ToolStripButton();
-            iconHome.AutoSize = false;
-            menu.ImageScalingSize = new Size(96, 96);
-            iconHome.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            iconHome.Image = global::flashcard.Properties.Resources.home;
-            iconHome.ImageTransparentColor = System.Drawing.Color.Magenta;
+            ToolStripButton iconHome = new ToolStripButton();
+            iconHome.Image = global::flashcard.Properties.Resources.home__1_;
             iconHome.Margin = new System.Windows.Forms.Padding(0, 120, 0, 0);
             iconHome.Name = "iconHome";
-            iconHome.Size = new System.Drawing.Size(96, 96);
             iconHome.Text = "Home";
-            iconHome.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical90;
-            iconHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            iconHome.ImageScaling = ToolStripItemImageScaling.None;
-            menu.Items.Add(iconHome);
+            common_menustrip(iconHome, menu);
         }
-        private void icon_library()
+        private void icon_library(ToolStrip menu)
         {
-            ToolStripButton iconLibrary = new System.Windows.Forms.ToolStripButton();
-            iconLibrary.AutoSize = false;
-            menu.ImageScalingSize = new Size(75, 75);
-            iconLibrary.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            ToolStripButton iconLibrary = new ToolStripButton();
             iconLibrary.Image = global::flashcard.Properties.Resources.library;
-            iconLibrary.ImageTransparentColor = System.Drawing.Color.Magenta;
             iconLibrary.Name = "iconLibrary";
-            iconLibrary.Size = new System.Drawing.Size(96, 96);
             iconLibrary.Text = "Library";
-            iconLibrary.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical90;
-            iconLibrary.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            iconLibrary.ImageScaling = ToolStripItemImageScaling.SizeToFit;
-            menu.Items.Add(iconLibrary);
+            common_menustrip(iconLibrary, menu);
         }
-        private void icon_add()
+        private void icon_add(ToolStrip menu)
         {
-            ToolStripButton iconAdd = new System.Windows.Forms.ToolStripButton();
-            iconAdd.AutoSize = false;
-            menu.ImageScalingSize = new Size(75, 75);
-            iconAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            iconAdd.Image = global::flashcard.Properties.Resources.add;
-            iconAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            ToolStripButton iconAdd = new ToolStripButton();
+            iconAdd.Image = global::flashcard.Properties.Resources.plus;
             iconAdd.Name = "iconAdd";
-            iconAdd.Size = new System.Drawing.Size(96, 96);
             iconAdd.Text = "Add";
-            iconAdd.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical90;
-            iconAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            iconAdd.ImageScaling = ToolStripItemImageScaling.SizeToFit;
-            menu.Items.Add(iconAdd);
+            common_menustrip(iconAdd, menu);
+        }
+        private void icon_export(ToolStrip menu)
+        {
+            ToolStripButton iconExport = new ToolStripButton();
+            iconExport.Image = global::flashcard.Properties.Resources.export__1_;
+            iconExport.Margin = new System.Windows.Forms.Padding(0, 300, 0, 0);
+            iconExport.Name = "iconExport";
+            iconExport.Text = "Export";
+            common_menustrip(iconExport, menu);
+        }
+        private void icon_Help(ToolStrip menu)
+        {
+            ToolStripButton iconHelp = new ToolStripButton();
+            iconHelp.Image = global::flashcard.Properties.Resources.question;
+            iconHelp.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            iconHelp.Name = "iconHelp";
+            iconHelp.Text = "Help";
+            common_menustrip(iconHelp, menu);
         }
     }
 }
