@@ -16,6 +16,7 @@ namespace flashcard
             icon_home(tool);
             icon_library(tool);
             icon_add(tool);
+            icon_review(tool);
             icon_export(tool);
             icon_Help(tool);
         }
@@ -26,7 +27,7 @@ namespace flashcard
             tool.ImageTransparentColor = Color.Magenta;
             tool.Size = new Size(96, 96);
             tool.ImageScaling = ToolStripItemImageScaling.SizeToFit;
-            tool.Font = new Font("Comfortaa", 17, FontStyle.Bold);
+            tool.Font = new Font("Consolas", 17, FontStyle.Bold);
             tool.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
             tool.TextImageRelation = TextImageRelation.ImageAboveText;
             menu.Items.Add(tool);
@@ -74,11 +75,19 @@ namespace flashcard
             iconAdd.Text = "Add";
             common_menustrip(iconAdd, menu);
         }
+        private void icon_review(ToolStrip menu)
+        {
+            ToolStripButton iconReview = new ToolStripButton();
+            iconReview.Image = global::flashcard.Properties.Resources.review;
+            iconReview.Name = "iconreview";
+            iconReview.Text = "Review";
+            common_menustrip(iconReview, menu);
+        }
         private void icon_export(ToolStrip menu)
         {
             ToolStripButton iconExport = new ToolStripButton();
             iconExport.Image = global::flashcard.Properties.Resources.export__1_;
-            iconExport.Margin = new System.Windows.Forms.Padding(0, 300, 0, 0);
+            iconExport.Margin = new System.Windows.Forms.Padding(0, 230, 0, 0);
             iconExport.Name = "iconExport";
             iconExport.Text = "Export";
             common_menustrip(iconExport, menu);
