@@ -100,13 +100,13 @@ namespace flashcard
             iconExport.Text = "Export";
             common_menustrip(iconExport, menu);
         }
-        private void icon_Help(ToolStrip menu)
+        private void icon_About(ToolStrip menu)
         {
             ToolStripButton iconHelp = new ToolStripButton();
             iconHelp.Image = global::flashcard.Properties.Resources.question;
             iconHelp.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            iconHelp.Name = "iconHelp";
-            iconHelp.Text = "Help";
+            iconHelp.Name = "iconAbout";
+            iconHelp.Text = "About";
             common_menustrip(iconHelp, menu);
         }
     }
