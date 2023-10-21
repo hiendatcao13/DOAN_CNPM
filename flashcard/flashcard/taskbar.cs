@@ -18,7 +18,7 @@ namespace flashcard
             icon_add(tool);
             icon_review(tool);
             icon_export(tool);
-            icon_Help(tool);
+            icon_About(tool);
         }
         private void common_menustrip(ToolStripButton tool, ToolStrip menu)
         {

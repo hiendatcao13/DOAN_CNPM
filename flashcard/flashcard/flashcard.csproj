@@ -52,6 +52,9 @@
     <Compile Include="frm_Review.Designer.cs">
       <DependentUpon>frm_Review.cs</DependentUpon>
     </Compile>
+    <Compile Include="RJ_Control\RJButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="taskbar.cs">
       <SubType>Form</SubType>
     </Compile>
