@@ -82,7 +82,15 @@ namespace flashcard
             iconReview.Name = "iconreview";
             iconReview.Text = "Review";
             common_menustrip(iconReview, menu);
+            iconReview.Click += new EventHandler(click_review);
         }
+
+        private void click_review(object sender, EventArgs e)
+        {
+            frm_Review frm = new frm_Review();
+            frm.ShowDialog();
+        }
+
         private void icon_export(ToolStrip menu)
         {
             ToolStripButton iconExport = new ToolStripButton();
