@@ -49,7 +49,15 @@ namespace flashcard
             logo.Region = rg;
             this.Controls.Add(logo);
             logo.BringToFront();
+            logo.Click += new EventHandler(show_account);
         }
+
+        private void show_account(object sender, EventArgs e)
+        {
+            frm_Account account = new frm_Account();
+            account.ShowDialog();
+        }
+
         private void icon_home(ToolStrip menu)
         {
             ToolStripButton iconHome = new ToolStripButton();
