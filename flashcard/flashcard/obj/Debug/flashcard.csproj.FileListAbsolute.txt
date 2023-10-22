@@ -22,3 +22,4 @@ D:\Code\C#\Final_Exam\flashcard\flashcard\obj\Debug\flashcard.frm_Review.resourc
 D:\Code\C#\Final_Exam\flashcard\flashcard\obj\Debug\CustomControls.RJControls.RJProgressBar.resources
 D:\Code\C#\Final_Exam\flashcard\flashcard\obj\Debug\CustomControls.RJControls.RJTextBox.resources
 D:\Code\C#\Final_Exam\flashcard\flashcard\obj\Debug\flashcard.frm_Account.resources
+D:\Code\C#\Final_Exam\flashcard\flashcard\obj\Debug\flashcard.frm_Sign_in.resources

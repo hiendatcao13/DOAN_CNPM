@@ -31,16 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Account));
             this.menu = new System.Windows.Forms.ToolStrip();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txt_Email = new CustomControls.RJControls.RJTextBox();
-            this.txt_Password = new CustomControls.RJControls.RJTextBox();
-            this.txt_Username = new CustomControls.RJControls.RJTextBox();
-            this.txt_Display_Name = new CustomControls.RJControls.RJTextBox();
-            this.btn_Save_Imformation = new CustomControls.RJControls.RJButton();
-            this.btn_Upload_Image = new CustomControls.RJControls.RJButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btn_Register = new CustomControls.RJControls.RJButton();
+            this.btn_Sign_in = new CustomControls.RJControls.RJButton();
+            this.btn_Upload_Image = new CustomControls.RJControls.RJButton();
+            this.btn_Save_Imformation = new CustomControls.RJControls.RJButton();
+            this.txt_Email = new CustomControls.RJControls.RJTextBox();
+            this.txt_Password = new CustomControls.RJControls.RJTextBox();
+            this.txt_Username = new CustomControls.RJControls.RJTextBox();
+            this.txt_Display_Name = new CustomControls.RJControls.RJTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,6 +66,122 @@
             this.pictureBox1.Size = new System.Drawing.Size(361, 420);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 16F);
+            this.label1.Location = new System.Drawing.Point(209, 140);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 30);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Display Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Light", 16F);
+            this.label2.Location = new System.Drawing.Point(209, 246);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 30);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "User Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Light", 16F);
+            this.label3.Location = new System.Drawing.Point(209, 352);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(99, 30);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Password";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Light", 16F);
+            this.label4.Location = new System.Drawing.Point(209, 458);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 30);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Email";
+            // 
+            // btn_Register
+            // 
+            this.btn_Register.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Register.BackgroundColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Register.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_Register.BorderRadius = 0;
+            this.btn_Register.BorderSize = 0;
+            this.btn_Register.FlatAppearance.BorderSize = 0;
+            this.btn_Register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Register.ForeColor = System.Drawing.Color.White;
+            this.btn_Register.Location = new System.Drawing.Point(526, 680);
+            this.btn_Register.Name = "btn_Register";
+            this.btn_Register.Size = new System.Drawing.Size(224, 48);
+            this.btn_Register.TabIndex = 13;
+            this.btn_Register.Text = "Register";
+            this.btn_Register.TextColor = System.Drawing.Color.White;
+            this.btn_Register.UseVisualStyleBackColor = false;
+            this.btn_Register.Click += new System.EventHandler(this.btn_Register_Click);
+            // 
+            // btn_Sign_in
+            // 
+            this.btn_Sign_in.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Sign_in.BackgroundColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Sign_in.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_Sign_in.BorderRadius = 0;
+            this.btn_Sign_in.BorderSize = 0;
+            this.btn_Sign_in.FlatAppearance.BorderSize = 0;
+            this.btn_Sign_in.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Sign_in.ForeColor = System.Drawing.Color.White;
+            this.btn_Sign_in.Location = new System.Drawing.Point(215, 680);
+            this.btn_Sign_in.Name = "btn_Sign_in";
+            this.btn_Sign_in.Size = new System.Drawing.Size(224, 48);
+            this.btn_Sign_in.TabIndex = 12;
+            this.btn_Sign_in.Text = "Sign in";
+            this.btn_Sign_in.TextColor = System.Drawing.Color.White;
+            this.btn_Sign_in.UseVisualStyleBackColor = false;
+            this.btn_Sign_in.Click += new System.EventHandler(this.btn_Sign_in_Click);
+            // 
+            // btn_Upload_Image
+            // 
+            this.btn_Upload_Image.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btn_Upload_Image.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btn_Upload_Image.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_Upload_Image.BorderRadius = 11;
+            this.btn_Upload_Image.BorderSize = 0;
+            this.btn_Upload_Image.FlatAppearance.BorderSize = 0;
+            this.btn_Upload_Image.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Upload_Image.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Upload_Image.ForeColor = System.Drawing.Color.White;
+            this.btn_Upload_Image.Location = new System.Drawing.Point(1061, 560);
+            this.btn_Upload_Image.Name = "btn_Upload_Image";
+            this.btn_Upload_Image.Size = new System.Drawing.Size(224, 41);
+            this.btn_Upload_Image.TabIndex = 7;
+            this.btn_Upload_Image.Text = "Upload Image";
+            this.btn_Upload_Image.TextColor = System.Drawing.Color.White;
+            this.btn_Upload_Image.UseVisualStyleBackColor = false;
+            // 
+            // btn_Save_Imformation
+            // 
+            this.btn_Save_Imformation.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btn_Save_Imformation.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btn_Save_Imformation.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_Save_Imformation.BorderRadius = 11;
+            this.btn_Save_Imformation.BorderSize = 0;
+            this.btn_Save_Imformation.FlatAppearance.BorderSize = 0;
+            this.btn_Save_Imformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Save_Imformation.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Save_Imformation.ForeColor = System.Drawing.Color.White;
+            this.btn_Save_Imformation.Location = new System.Drawing.Point(698, 593);
+            this.btn_Save_Imformation.Name = "btn_Save_Imformation";
+            this.btn_Save_Imformation.Size = new System.Drawing.Size(255, 46);
+            this.btn_Save_Imformation.TabIndex = 6;
+            this.btn_Save_Imformation.Text = "Save";
+            this.btn_Save_Imformation.TextColor = System.Drawing.Color.White;
+            this.btn_Save_Imformation.UseVisualStyleBackColor = false;
             // 
             // txt_Email
             // 
@@ -157,90 +275,14 @@
             this.txt_Display_Name.Texts = "";
             this.txt_Display_Name.UnderlinedStyle = false;
             // 
-            // btn_Save_Imformation
-            // 
-            this.btn_Save_Imformation.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_Save_Imformation.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_Save_Imformation.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btn_Save_Imformation.BorderRadius = 11;
-            this.btn_Save_Imformation.BorderSize = 0;
-            this.btn_Save_Imformation.FlatAppearance.BorderSize = 0;
-            this.btn_Save_Imformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Save_Imformation.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Save_Imformation.ForeColor = System.Drawing.Color.White;
-            this.btn_Save_Imformation.Location = new System.Drawing.Point(698, 593);
-            this.btn_Save_Imformation.Name = "btn_Save_Imformation";
-            this.btn_Save_Imformation.Size = new System.Drawing.Size(255, 46);
-            this.btn_Save_Imformation.TabIndex = 6;
-            this.btn_Save_Imformation.Text = "Save";
-            this.btn_Save_Imformation.TextColor = System.Drawing.Color.White;
-            this.btn_Save_Imformation.UseVisualStyleBackColor = false;
-            // 
-            // btn_Upload_Image
-            // 
-            this.btn_Upload_Image.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_Upload_Image.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_Upload_Image.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btn_Upload_Image.BorderRadius = 11;
-            this.btn_Upload_Image.BorderSize = 0;
-            this.btn_Upload_Image.FlatAppearance.BorderSize = 0;
-            this.btn_Upload_Image.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Upload_Image.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Upload_Image.ForeColor = System.Drawing.Color.White;
-            this.btn_Upload_Image.Location = new System.Drawing.Point(1061, 560);
-            this.btn_Upload_Image.Name = "btn_Upload_Image";
-            this.btn_Upload_Image.Size = new System.Drawing.Size(224, 41);
-            this.btn_Upload_Image.TabIndex = 7;
-            this.btn_Upload_Image.Text = "Upload Image";
-            this.btn_Upload_Image.TextColor = System.Drawing.Color.White;
-            this.btn_Upload_Image.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 16F);
-            this.label1.Location = new System.Drawing.Point(209, 140);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 30);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Display Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Light", 16F);
-            this.label2.Location = new System.Drawing.Point(209, 246);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 30);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "User Name";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Light", 16F);
-            this.label3.Location = new System.Drawing.Point(209, 352);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 30);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Password";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Light", 16F);
-            this.label4.Location = new System.Drawing.Point(209, 458);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 30);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Email";
-            // 
             // frm_Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1660, 836);
+            this.Controls.Add(this.btn_Register);
+            this.Controls.Add(this.btn_Sign_in);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -276,5 +318,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private CustomControls.RJControls.RJButton btn_Sign_in;
+        private CustomControls.RJControls.RJButton btn_Register;
     }
 }

@@ -61,5 +61,17 @@ namespace flashcard
             resize_form();
             getMenu();
         }
+
+        private void btn_Sign_in_Click(object sender, EventArgs e)
+        {
+            frm_Sign_in frm_signin = new frm_Sign_in();
+            frm_signin.ShowDialog();
+        }
+
+        private void btn_Register_Click(object sender, EventArgs e)
+        {
+            frm_Register frm_Register = new frm_Register();
+            frm_Register.ShowDialog();
+        }
     }
 }
