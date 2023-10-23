@@ -28,10 +28,10 @@ namespace flashcard
             this.Height = 1024;
             menu.Width = 96;
             menu.Height = this.Height;
+            menu.BackColor = lightpink;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            menu.BackColor = lightpink;
             resize_form();
             TaskBar(menu);
             taskbar_Level();

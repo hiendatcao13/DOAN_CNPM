@@ -46,6 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_library.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_library.Designer.cs">
+      <DependentUpon>frm_library.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Review.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Review.Designer.cs">
+      <DependentUpon>frm_Review.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RJ_Control\Custom_ProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJ_Control\RJButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJ_TextBox\RJTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RJ_TextBox\RJTextBox.Designer.cs">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="taskbar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,13 +81,25 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frm_library.resx">
+      <DependentUpon>frm_library.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_main.resx">
       <DependentUpon>frm_main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Review.resx">
+      <DependentUpon>frm_Review.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RJ_Control\Custom_ProgressBar.resx">
+      <DependentUpon>Custom_ProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RJ_TextBox\RJTextBox.resx">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -119,5 +155,6 @@
   <ItemGroup>
     <None Include="Resources\home %282%29.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
