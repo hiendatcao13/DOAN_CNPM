@@ -52,9 +52,6 @@ namespace flashcard
             btn.Font = new Font("Cofortaa", sizeFont);
             btn.BackColor = color;
             btn.Text = text;
-            btn.FlatStyle = FlatStyle.Flat;
-            btn.FlatAppearance.BorderColor = Color.Black;
-            btn.FlatAppearance.BorderSize = 3;
         }
         //Overload
         private void Format(System.Windows.Forms.TextBox txt, int X, int Y, int width, int height, int sizeFont, Color color, string text)
@@ -78,19 +75,22 @@ namespace flashcard
             txtSearch.BringToFront();
             cmbTopic.Location = new Point(96, 25);
             cmbTopic.Size = new Size(538, 59);
-            tabWord.Location = new Point(96, 136);
-            tabWord.Size = new Size(538, 887);
+            tabWord.Location = new Point(96, 210);
+            tabWord.Size = new Size(538, 690);
             tabWord.BackgroundColor = lightgreen;
             image.Location = new Point(634, 579);
             image.Size = new Size(806, 322);
             image.BackColor = lightpink;
-            Format(txtSearch, 96, 125, 538, 59, 35, green, "");
-            Format(txtWord, 634, 25, 805, 165, 100, pink, "");
+            txtWord.Location = new Point(634, 25);
+            txtWord.Size = new Size(805, 165);
+            txtSearch.Location = new Point(96, 125);
+            txtSearch.Size = new Size(538, 59);
             Format(btnDesc, 724, 486, 200, 74, 35, pink, "Desc");
             Format(btnExample, 1148, 487, 200, 74, 35, pink, "Ex");
             Format(txtDesc, 633, 210, 399, 257, 40, lightpink, "");
             Format(txtExample, 1048, 210, 391, 257, 40, lightpink, "");
             Format(btnSave, 932, 928, 186, 71, 35, pink, "Save");
+            Format(btnTest, 272, 938, 186, 71, 35, yellow, "Test");
         }
         private void icon_logo() //tạo logo và có bo cong tròn
         {
