@@ -73,5 +73,10 @@ namespace flashcard
             frm_Register frm_Register = new frm_Register();
             frm_Register.ShowDialog();
         }
+
+        private void btn_Save_Imformation_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
