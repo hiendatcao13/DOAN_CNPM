@@ -89,8 +89,9 @@ namespace flashcard
             Format(btnExample, 1148, 487, 200, 74, 35, pink, "Ex");
             Format(txtDesc, 633, 210, 399, 257, 40, lightpink, "");
             Format(txtExample, 1048, 210, 391, 257, 40, lightpink, "");
-            Format(btnSave, 932, 928, 186, 71, 35, pink, "Save");
+            Format(btnSave, 1048, 929, 186, 71, 35, pink, "Save");
             Format(btnTest, 272, 938, 186, 71, 35, yellow, "Test");
+            Format(btnDelete, 847, 929, 186, 71, 35, pink, "Delete");
         }
         private void icon_logo() //tạo logo và có bo cong tròn
         {

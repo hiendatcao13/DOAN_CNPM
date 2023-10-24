@@ -40,6 +40,7 @@
             this.btnTest = new CustomControls.RJControls.RJButton();
             this.txtWord = new CustomControls.RJControls.RJTextBox();
             this.txtSearch = new CustomControls.RJControls.RJTextBox();
+            this.btnDelete = new CustomControls.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabWord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image)).BeginInit();
             this.SuspendLayout();
@@ -152,7 +153,7 @@
             this.btnSave.FlatAppearance.BorderSize = 3;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(664, 589);
+            this.btnSave.Location = new System.Drawing.Point(555, 589);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(150, 40);
             this.btnSave.TabIndex = 12;
@@ -199,7 +200,6 @@
             this.txtWord.TabIndex = 13;
             this.txtWord.Texts = "";
             this.txtWord.UnderlinedStyle = false;
-            
             // 
             // txtSearch
             // 
@@ -218,10 +218,28 @@
             this.txtSearch.PasswordChar = false;
             this.txtSearch.PlaceholderColor = System.Drawing.Color.Black;
             this.txtSearch.PlaceholderText = "";
-            this.txtSearch.Size = new System.Drawing.Size(359, 69);
+            this.txtSearch.Size = new System.Drawing.Size(359, 61);
             this.txtSearch.TabIndex = 14;
             this.txtSearch.Texts = "";
             this.txtSearch.UnderlinedStyle = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnDelete.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnDelete.BorderColor = System.Drawing.Color.Black;
+            this.btnDelete.BorderRadius = 20;
+            this.btnDelete.BorderSize = 3;
+            this.btnDelete.FlatAppearance.BorderSize = 3;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.Color.Black;
+            this.btnDelete.Location = new System.Drawing.Point(725, 589);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(150, 40);
+            this.btnDelete.TabIndex = 12;
+            this.btnDelete.Text = "rjButton1";
+            this.btnDelete.TextColor = System.Drawing.Color.Black;
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
             // frm_library
             // 
@@ -232,6 +250,7 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.txtWord);
             this.Controls.Add(this.btnTest);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDesc);
             this.Controls.Add(this.btnExample);
@@ -266,5 +285,6 @@
         private CustomControls.RJControls.RJButton btnTest;
         private CustomControls.RJControls.RJTextBox txtWord;
         private CustomControls.RJControls.RJTextBox txtSearch;
+        private CustomControls.RJControls.RJButton btnDelete;
     }
 }
