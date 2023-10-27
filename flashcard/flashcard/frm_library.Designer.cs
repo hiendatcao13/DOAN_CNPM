@@ -51,8 +51,8 @@
             this.menu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.menu.Size = new System.Drawing.Size(28, 986);
+            this.menu.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.menu.Size = new System.Drawing.Size(27, 641);
             this.menu.TabIndex = 0;
             this.menu.Text = "toolStrip1";
             // 
@@ -63,43 +63,48 @@
             this.cmbTopic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbTopic.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F);
             this.cmbTopic.FormattingEnabled = true;
-            this.cmbTopic.Location = new System.Drawing.Point(150, 25);
+            this.cmbTopic.Location = new System.Drawing.Point(100, 16);
+            this.cmbTopic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbTopic.Name = "cmbTopic";
-            this.cmbTopic.Size = new System.Drawing.Size(538, 116);
+            this.cmbTopic.Size = new System.Drawing.Size(360, 81);
             this.cmbTopic.TabIndex = 1;
             // 
             // tabWord
             // 
             this.tabWord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabWord.Location = new System.Drawing.Point(150, 326);
+            this.tabWord.Location = new System.Drawing.Point(100, 212);
+            this.tabWord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabWord.Name = "tabWord";
             this.tabWord.RowHeadersWidth = 62;
             this.tabWord.RowTemplate.Height = 28;
-            this.tabWord.Size = new System.Drawing.Size(538, 540);
+            this.tabWord.Size = new System.Drawing.Size(359, 351);
             this.tabWord.TabIndex = 3;
             // 
             // image
             // 
-            this.image.Location = new System.Drawing.Point(770, 411);
+            this.image.Location = new System.Drawing.Point(513, 267);
+            this.image.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.image.Name = "image";
-            this.image.Size = new System.Drawing.Size(654, 455);
+            this.image.Size = new System.Drawing.Size(436, 296);
             this.image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.image.TabIndex = 8;
             this.image.TabStop = false;
             // 
             // txtExample
             // 
-            this.txtExample.Location = new System.Drawing.Point(1112, 180);
+            this.txtExample.Location = new System.Drawing.Point(741, 117);
+            this.txtExample.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtExample.Name = "txtExample";
-            this.txtExample.Size = new System.Drawing.Size(302, 195);
+            this.txtExample.Size = new System.Drawing.Size(203, 128);
             this.txtExample.TabIndex = 11;
             this.txtExample.Text = "";
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(753, 180);
+            this.txtDesc.Location = new System.Drawing.Point(502, 117);
+            this.txtDesc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(302, 195);
+            this.txtDesc.Size = new System.Drawing.Size(203, 128);
             this.txtDesc.TabIndex = 11;
             this.txtDesc.Text = "";
             // 
@@ -113,10 +118,9 @@
             this.btnExample.FlatAppearance.BorderSize = 3;
             this.btnExample.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExample.ForeColor = System.Drawing.Color.Black;
-            this.btnExample.Location = new System.Drawing.Point(1162, 111);
-            this.btnExample.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnExample.Location = new System.Drawing.Point(775, 72);
             this.btnExample.Name = "btnExample";
-            this.btnExample.Size = new System.Drawing.Size(225, 62);
+            this.btnExample.Size = new System.Drawing.Size(150, 40);
             this.btnExample.TabIndex = 12;
             this.btnExample.Text = "rjButton1";
             this.btnExample.TextColor = System.Drawing.Color.Black;
@@ -132,15 +136,13 @@
             this.btnDesc.FlatAppearance.BorderSize = 3;
             this.btnDesc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesc.ForeColor = System.Drawing.Color.Black;
-            this.btnDesc.Location = new System.Drawing.Point(796, 111);
-            this.btnDesc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDesc.Location = new System.Drawing.Point(531, 72);
             this.btnDesc.Name = "btnDesc";
-            this.btnDesc.Size = new System.Drawing.Size(225, 62);
+            this.btnDesc.Size = new System.Drawing.Size(150, 40);
             this.btnDesc.TabIndex = 12;
             this.btnDesc.Text = "rjButton1";
             this.btnDesc.TextColor = System.Drawing.Color.Black;
             this.btnDesc.UseVisualStyleBackColor = false;
-            this.btnDesc.Click += new System.EventHandler(this.btnDesc_Click);
             // 
             // btnSave
             // 
@@ -152,10 +154,9 @@
             this.btnSave.FlatAppearance.BorderSize = 3;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(832, 906);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSave.Location = new System.Drawing.Point(555, 589);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(225, 62);
+            this.btnSave.Size = new System.Drawing.Size(150, 40);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "rjButton1";
             this.btnSave.TextColor = System.Drawing.Color.Black;
@@ -171,14 +172,14 @@
             this.btnTest.FlatAppearance.BorderSize = 3;
             this.btnTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTest.ForeColor = System.Drawing.Color.Black;
-            this.btnTest.Location = new System.Drawing.Point(302, 906);
-            this.btnTest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnTest.Location = new System.Drawing.Point(201, 589);
             this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(225, 62);
+            this.btnTest.Size = new System.Drawing.Size(150, 40);
             this.btnTest.TabIndex = 12;
             this.btnTest.Text = "rjButton1";
             this.btnTest.TextColor = System.Drawing.Color.Black;
             this.btnTest.UseVisualStyleBackColor = false;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // txtWord
             // 
@@ -189,15 +190,15 @@
             this.txtWord.BorderSize = 3;
             this.txtWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 100F);
             this.txtWord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtWord.Location = new System.Drawing.Point(784, 502);
-            this.txtWord.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtWord.Location = new System.Drawing.Point(523, 326);
+            this.txtWord.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtWord.Multiline = false;
             this.txtWord.Name = "txtWord";
-            this.txtWord.Padding = new System.Windows.Forms.Padding(15, 11, 15, 11);
+            this.txtWord.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtWord.PasswordChar = false;
             this.txtWord.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtWord.PlaceholderText = "";
-            this.txtWord.Size = new System.Drawing.Size(621, 249);
+            this.txtWord.Size = new System.Drawing.Size(414, 168);
             this.txtWord.TabIndex = 13;
             this.txtWord.Texts = "";
             this.txtWord.UnderlinedStyle = false;
@@ -211,15 +212,15 @@
             this.txtSearch.BorderSize = 3;
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSearch.Location = new System.Drawing.Point(150, 211);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtSearch.Location = new System.Drawing.Point(100, 137);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearch.Multiline = false;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Padding = new System.Windows.Forms.Padding(15, 11, 15, 11);
+            this.txtSearch.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtSearch.PasswordChar = false;
             this.txtSearch.PlaceholderColor = System.Drawing.Color.Black;
             this.txtSearch.PlaceholderText = "";
-            this.txtSearch.Size = new System.Drawing.Size(538, 92);
+            this.txtSearch.Size = new System.Drawing.Size(359, 61);
             this.txtSearch.TabIndex = 14;
             this.txtSearch.Texts = "";
             this.txtSearch.UnderlinedStyle = false;
@@ -234,10 +235,9 @@
             this.btnDelete.FlatAppearance.BorderSize = 3;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(1088, 906);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDelete.Location = new System.Drawing.Point(725, 589);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(225, 62);
+            this.btnDelete.Size = new System.Drawing.Size(150, 40);
             this.btnDelete.TabIndex = 12;
             this.btnDelete.Text = "rjButton1";
             this.btnDelete.TextColor = System.Drawing.Color.Black;
@@ -245,10 +245,10 @@
             // 
             // frm_library
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1425, 986);
+            this.ClientSize = new System.Drawing.Size(950, 641);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.txtWord);
             this.Controls.Add(this.btnTest);
@@ -262,6 +262,7 @@
             this.Controls.Add(this.tabWord);
             this.Controls.Add(this.cmbTopic);
             this.Controls.Add(this.menu);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frm_library";
             this.Text = "frm_library";
             this.Load += new System.EventHandler(this.frm_library_Load);

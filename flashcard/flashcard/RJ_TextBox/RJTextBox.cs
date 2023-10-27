@@ -28,6 +28,9 @@ namespace CustomControls.RJControls
         private bool isPlaceholder = false;
         private bool isPasswordChar = false;
 
+
+        private bool isReadOnly = false;
+        private ContentAlignment textAlign = ContentAlignment.MiddleCenter; // Đảm bảo rằng biến textAlign đã được định nghĩa
         //Events
         public event EventHandler _TextChanged;
 
@@ -41,6 +44,18 @@ namespace CustomControls.RJControls
         }
 
         #region -> Properties
+
+        [Category("RJ Code Advance")]
+        public bool ReadOnly
+        {
+            get { return isReadOnly; }
+            set
+            {
+                isReadOnly = value;
+                textBox1.ReadOnly = value; // Set the TextBox's ReadOnly property
+                this.Invalidate();
+            }
+        }
         [Category("RJ Code Advance")]
         public Color BorderColor
         {
@@ -92,7 +107,7 @@ namespace CustomControls.RJControls
             {
                 isPasswordChar = value;
                 if (!isPlaceholder)
-                    textBox1.UseSystemPasswordChar = value;
+                    textBox1.UseSystemPasswordChar = true;
             }
         }
 
@@ -193,6 +208,40 @@ namespace CustomControls.RJControls
 
 
 
+        [Category("RJ Code Advance")]
+        public ContentAlignment TextAlign
+        {
+            get { return textAlign; }
+            set
+            {
+                textAlign = value;
+                HorizontalAlignment horizontalAlignment = ConvertToHorizontalAlignment(value);
+                textBox1.TextAlign = horizontalAlignment;
+                this.Invalidate();
+            }
+        }
+
+        private HorizontalAlignment ConvertToHorizontalAlignment(ContentAlignment contentAlignment)
+        {
+            switch (contentAlignment)
+            {
+                case ContentAlignment.TopLeft:
+                case ContentAlignment.MiddleLeft:
+                case ContentAlignment.BottomLeft:
+                    return HorizontalAlignment.Left;
+                case ContentAlignment.TopCenter:
+                case ContentAlignment.MiddleCenter:
+                case ContentAlignment.BottomCenter:
+                    return HorizontalAlignment.Center;
+                case ContentAlignment.TopRight:
+                case ContentAlignment.MiddleRight:
+                case ContentAlignment.BottomRight:
+                    return HorizontalAlignment.Right;
+                default:
+                    return HorizontalAlignment.Left;
+            }
+        }
+
         #endregion
 
         #region -> Overridden methods
@@ -245,6 +294,54 @@ namespace CustomControls.RJControls
                         graph.DrawPath(penBorderSmooth, pathBorderSmooth);
                         //Draw border
                         graph.DrawPath(penBorder, pathBorder);
+                    }
+                }
+                using (StringFormat sf = new StringFormat())
+                {
+                    switch (textAlign)
+                    {
+                        case ContentAlignment.TopLeft:
+                            sf.Alignment = StringAlignment.Near;
+                            sf.LineAlignment = StringAlignment.Near;
+                            break;
+                        case ContentAlignment.TopCenter:
+                            sf.Alignment = StringAlignment.Center;
+                            sf.LineAlignment = StringAlignment.Near;
+                            break;
+                        case ContentAlignment.TopRight:
+                            sf.Alignment = StringAlignment.Far;
+                            sf.LineAlignment = StringAlignment.Near;
+                            break;
+                        case ContentAlignment.MiddleLeft:
+                            sf.Alignment = StringAlignment.Near;
+                            sf.LineAlignment = StringAlignment.Center;
+                            break;
+                        case ContentAlignment.MiddleCenter:
+                            sf.Alignment = StringAlignment.Center;
+                            sf.LineAlignment = StringAlignment.Center;
+                            break;
+                        case ContentAlignment.MiddleRight:
+                            sf.Alignment = StringAlignment.Far; 
+                            sf.LineAlignment = StringAlignment.Center;
+                            break;
+                        case ContentAlignment.BottomLeft:
+                            sf.Alignment = StringAlignment.Near;
+                            sf.LineAlignment = StringAlignment.Far;
+                            break;
+                        case ContentAlignment.BottomCenter:
+                            sf.Alignment = StringAlignment.Center;
+                            sf.LineAlignment = StringAlignment.Far;
+                            break;
+                        case ContentAlignment.BottomRight:
+                            sf.Alignment = StringAlignment.Far;
+                            sf.LineAlignment = StringAlignment.Far;
+                            break;
+                            // Add cases for other alignments as needed
+                    }
+
+                    using (SolidBrush textBrush = new SolidBrush(this.ForeColor))
+                    {
+                        graph.DrawString(textBox1.Text, this.Font, textBrush, rectBorder, sf);
                     }
                 }
             }
@@ -337,20 +434,25 @@ namespace CustomControls.RJControls
             if (_TextChanged != null)
                 _TextChanged.Invoke(sender, e);
         }
+
         private void textBox1_Click(object sender, EventArgs e)
         {
             this.OnClick(e);
         }
+
         private void textBox1_MouseEnter(object sender, EventArgs e)
         {
             this.OnMouseEnter(e);
         }
+
         private void textBox1_MouseLeave(object sender, EventArgs e)
         {
             this.OnMouseLeave(e);
         }
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (isReadOnly)
+                e.Handled = true; // Prevent any input when read-only
             this.OnKeyPress(e);
         }
 

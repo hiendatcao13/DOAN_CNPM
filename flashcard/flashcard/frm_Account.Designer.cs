@@ -109,13 +109,14 @@
             // 
             // btn_Register
             // 
-            this.btn_Register.BackColor = System.Drawing.ColorTranslator.FromHtml("#A8DF8E");
-            this.btn_Register.BackgroundColor = System.Drawing.ColorTranslator.FromHtml("#A8DF8E");
+            this.btn_Register.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(223)))), ((int)(((byte)(142)))));
+            this.btn_Register.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(223)))), ((int)(((byte)(142)))));
             this.btn_Register.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_Register.BorderRadius = 11;
             this.btn_Register.BorderSize = 2;
             this.btn_Register.FlatAppearance.BorderSize = 0;
             this.btn_Register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Register.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Register.ForeColor = System.Drawing.Color.Black;
             this.btn_Register.Location = new System.Drawing.Point(478, 680);
             this.btn_Register.Name = "btn_Register";
@@ -125,17 +126,17 @@
             this.btn_Register.TextColor = System.Drawing.Color.Black;
             this.btn_Register.UseVisualStyleBackColor = false;
             this.btn_Register.Click += new System.EventHandler(this.btn_Register_Click);
-            this.btn_Register.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btn_Sign_in
             // 
-            this.btn_Sign_in.BackColor = System.Drawing.ColorTranslator.FromHtml("#A8DF8E");
-            this.btn_Sign_in.BackgroundColor = System.Drawing.ColorTranslator.FromHtml("#A8DF8E");
+            this.btn_Sign_in.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(223)))), ((int)(((byte)(142)))));
+            this.btn_Sign_in.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(223)))), ((int)(((byte)(142)))));
             this.btn_Sign_in.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_Sign_in.BorderRadius = 11;
             this.btn_Sign_in.BorderSize = 2;
             this.btn_Sign_in.FlatAppearance.BorderSize = 0;
             this.btn_Sign_in.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Sign_in.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sign_in.ForeColor = System.Drawing.Color.Black;
             this.btn_Sign_in.Location = new System.Drawing.Point(203, 680);
             this.btn_Sign_in.Name = "btn_Sign_in";
@@ -145,12 +146,11 @@
             this.btn_Sign_in.TextColor = System.Drawing.Color.Black;
             this.btn_Sign_in.UseVisualStyleBackColor = false;
             this.btn_Sign_in.Click += new System.EventHandler(this.btn_Sign_in_Click);
-            this.btn_Sign_in.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btn_Upload_Image
             // 
-            this.btn_Upload_Image.BackColor = System.Drawing.ColorTranslator.FromHtml("#A8DF8E");
-            this.btn_Upload_Image.BackgroundColor = System.Drawing.ColorTranslator.FromHtml("#A8DF8E");
+            this.btn_Upload_Image.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(223)))), ((int)(((byte)(142)))));
+            this.btn_Upload_Image.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(223)))), ((int)(((byte)(142)))));
             this.btn_Upload_Image.BorderColor = System.Drawing.Color.Gray;
             this.btn_Upload_Image.BorderRadius = 11;
             this.btn_Upload_Image.BorderSize = 2;
@@ -168,8 +168,8 @@
             // 
             // btn_Save_Imformation
             // 
-            this.btn_Save_Imformation.BackColor = System.Drawing.ColorTranslator.FromHtml("#A8DF8E");
-            this.btn_Save_Imformation.BackgroundColor = System.Drawing.ColorTranslator.FromHtml("#A8DF8E");
+            this.btn_Save_Imformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(223)))), ((int)(((byte)(142)))));
+            this.btn_Save_Imformation.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(223)))), ((int)(((byte)(142)))));
             this.btn_Save_Imformation.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_Save_Imformation.BorderRadius = 11;
             this.btn_Save_Imformation.BorderSize = 2;
@@ -224,13 +224,14 @@
             this.txt_Password.Multiline = true;
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_Password.PasswordChar = false;
+            this.txt_Password.PasswordChar = true;
             this.txt_Password.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txt_Password.PlaceholderText = "";
             this.txt_Password.Size = new System.Drawing.Size(750, 50);
             this.txt_Password.TabIndex = 3;
             this.txt_Password.Texts = "";
             this.txt_Password.UnderlinedStyle = false;
+            this.txt_Password._TextChanged += new System.EventHandler(this.txt_Password__TextChanged);
             // 
             // txt_Username
             // 

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_Sign_in = new CustomControls.RJControls.RJButton();
+            this.btn_Register = new CustomControls.RJControls.RJButton();
             this.txt_Password = new CustomControls.RJControls.RJTextBox();
             this.txt_DisplayName = new CustomControls.RJControls.RJTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,30 +52,30 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "User name";
             // 
-            // btn_Sign_in
+            // btn_Register
             // 
-            this.btn_Sign_in.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_Sign_in.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_Sign_in.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btn_Sign_in.BorderRadius = 18;
-            this.btn_Sign_in.BorderSize = 0;
-            this.btn_Sign_in.FlatAppearance.BorderSize = 0;
-            this.btn_Sign_in.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Sign_in.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Sign_in.ForeColor = System.Drawing.Color.White;
-            this.btn_Sign_in.Location = new System.Drawing.Point(826, 586);
-            this.btn_Sign_in.Name = "btn_Sign_in";
-            this.btn_Sign_in.Size = new System.Drawing.Size(188, 42);
-            this.btn_Sign_in.TabIndex = 12;
-            this.btn_Sign_in.Text = "Register";
-            this.btn_Sign_in.TextColor = System.Drawing.Color.White;
-            this.btn_Sign_in.UseVisualStyleBackColor = false;
+            this.btn_Register.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btn_Register.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btn_Register.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_Register.BorderRadius = 18;
+            this.btn_Register.BorderSize = 0;
+            this.btn_Register.FlatAppearance.BorderSize = 0;
+            this.btn_Register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Register.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Register.ForeColor = System.Drawing.Color.White;
+            this.btn_Register.Location = new System.Drawing.Point(826, 586);
+            this.btn_Register.Name = "btn_Register";
+            this.btn_Register.Size = new System.Drawing.Size(188, 42);
+            this.btn_Register.TabIndex = 12;
+            this.btn_Register.Text = "Register";
+            this.btn_Register.TextColor = System.Drawing.Color.White;
+            this.btn_Register.UseVisualStyleBackColor = false;
             // 
             // txt_Password
             // 
             this.txt_Password.BackColor = System.Drawing.SystemColors.Window;
             this.txt_Password.BorderColor = System.Drawing.Color.Black;
-            this.txt_Password.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txt_Password.BorderFocusColor = System.Drawing.Color.Lime;
             this.txt_Password.BorderRadius = 15;
             this.txt_Password.BorderSize = 2;
             this.txt_Password.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -97,7 +97,7 @@
             // 
             this.txt_DisplayName.BackColor = System.Drawing.SystemColors.Window;
             this.txt_DisplayName.BorderColor = System.Drawing.Color.Black;
-            this.txt_DisplayName.BorderFocusColor = System.Drawing.Color.Black;
+            this.txt_DisplayName.BorderFocusColor = System.Drawing.Color.Lime;
             this.txt_DisplayName.BorderRadius = 15;
             this.txt_DisplayName.BorderSize = 2;
             this.txt_DisplayName.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,7 +149,7 @@
             // 
             this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
             this.rjTextBox1.BorderColor = System.Drawing.Color.Black;
-            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.Lime;
             this.rjTextBox1.BorderRadius = 15;
             this.rjTextBox1.BorderSize = 2;
             this.rjTextBox1.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -181,7 +181,7 @@
             // 
             this.rjTextBox2.BackColor = System.Drawing.SystemColors.Window;
             this.rjTextBox2.BorderColor = System.Drawing.Color.Black;
-            this.rjTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.rjTextBox2.BorderFocusColor = System.Drawing.Color.Lime;
             this.rjTextBox2.BorderRadius = 15;
             this.rjTextBox2.BorderSize = 2;
             this.rjTextBox2.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -231,7 +231,7 @@
             this.Controls.Add(this.rjTextBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btn_Sign_in);
+            this.Controls.Add(this.btn_Register);
             this.Controls.Add(this.txt_Password);
             this.Controls.Add(this.txt_DisplayName);
             this.Controls.Add(this.label2);
@@ -247,7 +247,7 @@
         #endregion
 
         private System.Windows.Forms.Label label3;
-        private CustomControls.RJControls.RJButton btn_Sign_in;
+        private CustomControls.RJControls.RJButton btn_Register;
         private CustomControls.RJControls.RJTextBox txt_Password;
         private CustomControls.RJControls.RJTextBox txt_DisplayName;
         private System.Windows.Forms.Label label2;

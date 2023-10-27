@@ -34,7 +34,6 @@
             this.txt_Password = new CustomControls.RJControls.RJTextBox();
             this.btn_Sign_in = new CustomControls.RJControls.RJButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_Register = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -70,7 +69,7 @@
             this.txt_UserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_UserName.Location = new System.Drawing.Point(465, 258);
             this.txt_UserName.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_UserName.Multiline = true;
+            this.txt_UserName.Multiline = false;
             this.txt_UserName.Name = "txt_UserName";
             this.txt_UserName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txt_UserName.PasswordChar = false;
@@ -92,10 +91,10 @@
             this.txt_Password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_Password.Location = new System.Drawing.Point(465, 364);
             this.txt_Password.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_Password.Multiline = true;
+            this.txt_Password.Multiline = false;
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_Password.PasswordChar = false;
+            this.txt_Password.PasswordChar = true;
             this.txt_Password.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txt_Password.PlaceholderText = "";
             this.txt_Password.Size = new System.Drawing.Size(549, 43);
@@ -132,15 +131,6 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Password";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "label4";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -168,7 +158,6 @@
             this.ClientSize = new System.Drawing.Size(1257, 714);
             this.Controls.Add(this.lbl_Register);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_Sign_in);
             this.Controls.Add(this.txt_Password);
@@ -190,7 +179,6 @@
         private CustomControls.RJControls.RJTextBox txt_Password;
         private CustomControls.RJControls.RJButton btn_Sign_in;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbl_Register;
     }

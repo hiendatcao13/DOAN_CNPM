@@ -78,5 +78,10 @@ namespace flashcard
         {
 
         }
+
+        private void txt_Password__TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
