@@ -12,7 +12,7 @@ namespace flashcard.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Account()
         {
-            Category = new HashSet<Category>();
+            Categories = new HashSet<Category>();
         }
 
         [Key]
@@ -35,7 +35,9 @@ namespace flashcard.Model
         [StringLength(255)]
         public string Email { get; set; }
 
+        public bool Status { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Category> Category { get; set; }
+        public virtual ICollection<Category> Categories { get; set; }
     }
 }

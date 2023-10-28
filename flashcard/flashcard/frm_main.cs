@@ -1,4 +1,6 @@
-﻿using flashcard.Properties;
+﻿using CustomControls.RJControls;
+using flashcard.Model;
+using flashcard.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,6 +21,7 @@ namespace flashcard
         System.Drawing.Color lightpink = System.Drawing.ColorTranslator.FromHtml("#FFE5E5");
         System.Drawing.Color pink = System.Drawing.ColorTranslator.FromHtml("#FFBFBF");
         System.Drawing.Color yellow = System.Drawing.ColorTranslator.FromHtml("#FEFDCA");
+        Flash_Card db;
         public frm_main()
         {
             InitializeComponent();
@@ -29,12 +33,13 @@ namespace flashcard
             menu.Width = 96;
             menu.Height = this.Height;
             menu.BackColor = lightpink;
+            db = new Flash_Card();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
             resize_form();
-            TaskBar(menu);
             taskbar_Level();
+            TaskBar(menu);
             handbook();
             trophy();
         }
@@ -44,21 +49,41 @@ namespace flashcard
             e.Graphics.DrawLine(line, 189, 853, 1147, 853);
 
         }
+        private void animation(Button btn, int level)
+        {
+            int sum = db.Cards.Count();
+            int count = db.Cards.Where(p => p.Level_ID == level).Count();
+            if(count == 0)
+            {
+                btn.Visible = false;
+                return;
+            }
+            double percentage = 1 - (double)count / sum;
+            int end = (int)Math.Floor(percentage * btn.Height);
+            for(int i = 0; i < end; i++)
+            {
+                btn.Location = new Point(btn.Location.X, btn.Location.Y + 1);
+                btn.Height--;
+            }
+        }
         private void taskbar_Level()
         {
             for(int i = 0; i < 5; i++)
             {
-                Button btn = new Button
+                RJButton btn = new RJButton
                 {
                     Location = new System.Drawing.Point(189 + i * 200, 290),
-                    
                     Name = "button" + (i+1) + "",
-                    Size = new System.Drawing.Size(158, 563),
+                    Size = new System.Drawing.Size(158, 561),
                     TabIndex = 2,
                     Text = "",
                     BackColor = (i == 0) ? pink : (i == 1) ? lightgreen : (i == 2) ? yellow : (i == 3) ? green : lightpink,
                     FlatStyle = FlatStyle.Flat,
+                    BorderRadius = 20,
+                    BorderSize = 3,
+                    BorderColor = Color.Black
                 };
+                animation(btn, i + 1);
                 Label number_word = new Label
                 {
                     Location = new System.Drawing.Point(205 + i * 200, btn.Location.Y - 55),
@@ -67,9 +92,11 @@ namespace flashcard
                     TextAlign = ContentAlignment.MiddleCenter,
                     Size = new System.Drawing.Size(131, 50),
                     TabIndex = 2,
-                    Text = "100",
+                    Text = db.Cards.Where(p => p.Level_ID == (i+1)).Count().ToString(),
                     Font = new Font("Comfortaa", 35),
                 };
+                if (number_word.Text == "0")
+                    number_word.Visible = false;
                 Label level = new Label
                 {
                     Location = new System.Drawing.Point(189 + i * 200, 891),
@@ -111,6 +138,7 @@ namespace flashcard
                 TabIndex = 1,
                 TabStop = false,
             };
+            int count = db.Cards.Count();
             Label text = new Label
             {
                 Location = new System.Drawing.Point(302, 98),
@@ -119,12 +147,13 @@ namespace flashcard
                 TextAlign = ContentAlignment.TopCenter,
                 Size = new System.Drawing.Size(487, 100),
                 TabIndex = 2,
-                Text = "contains " + "454" + " words",
+                Text = "contains " + count + " words",
                 Font = new Font("Comfortaa", 35),
             };
             Controls.AddRange(new Control[] { handbook, text});
-
         }
+
+
         private void trophy()
         {
             PictureBox trophy = new PictureBox
@@ -146,15 +175,31 @@ namespace flashcard
                 TextAlign = ContentAlignment.TopCenter,
                 Size = new System.Drawing.Size(423, 65),
                 TabIndex = 2,
-                Text = "18" + " days streak",
                 Font = new Font("Comfortaa", 35),
             };
+            text.Text = count_streak() + " days streak";
             Controls.AddRange(new Control[] { trophy, text });
         }
-        public void getMenuStrip(ToolStrip trip1)
+        private int count_streak()
         {
-            trip1 = menu;
+            int count = 0;
+            List<Card> cards = db.Cards.ToList();
+            DateTime max = db.Cards.FirstOrDefault().Last_Modify;
+            foreach (var item in cards)
+                max = (max > item.Last_Modify) ? max : item.Last_Modify;
+            if (max.AddDays(2).Date <= DateTime.Now.Date)
+            {
+                return 0;
+            }
+            for(int i = 0; i < cards.Count; i++)
+            {
+                foreach (var item in cards)
+                    if (item.Last_Modify.Date == max.AddDays(-(i + 1)))
+                        count++;
+            }
+            return count;
         }
 
+        
     }
 }

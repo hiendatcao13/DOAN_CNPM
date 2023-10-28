@@ -1,11 +1,14 @@
-﻿using System;
+﻿using flashcard.Model;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Excel = Microsoft.Office.Interop.Excel;
 namespace flashcard
 {
     public partial class frm_main : Form
@@ -51,11 +54,14 @@ namespace flashcard
             logo.BringToFront();
             logo.Click += new EventHandler(show_account);
         }
-
         private void show_account(object sender, EventArgs e)
         {
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+                Application.OpenForms[i].Hide();
             frm_Account account = new frm_Account();
             account.ShowDialog();
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+                Application.OpenForms[i].Close();
         }
 
         private void icon_home(ToolStrip menu)
@@ -66,7 +72,19 @@ namespace flashcard
             iconHome.Name = "iconHome";
             iconHome.Text = "Home";
             common_menustrip(iconHome, menu);
+            iconHome.Click += new EventHandler(iconHome_CLick);
         }
+
+        private void iconHome_CLick(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+                Application.OpenForms[i].Hide();
+            frm_main frm = new frm_main();
+            frm.ShowDialog();
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+                Application.OpenForms[i].Close();
+        }
+
         private void icon_library(ToolStrip menu)
         {
             ToolStripButton iconLibrary = new ToolStripButton();
@@ -79,8 +97,13 @@ namespace flashcard
 
         private void IconLibrary_Click(object sender, EventArgs e)
         {
-            frm_library frm_Library = new frm_library();
-            frm_Library.ShowDialog();
+
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+                Application.OpenForms[i].Hide();
+            frm_library frm1 = new frm_library();
+            frm1.ShowDialog();
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+                Application.OpenForms[i].Close();
         }
 
         private void icon_add(ToolStrip menu)
@@ -95,8 +118,12 @@ namespace flashcard
 
         private void IconAdd_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+                Application.OpenForms[i].Hide();
             frm_add form = new frm_add();
             form.ShowDialog();
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+                Application.OpenForms[i].Close();
         }
         private void icon_review(ToolStrip menu)
         {
@@ -110,8 +137,12 @@ namespace flashcard
 
         private void click_review(object sender, EventArgs e)
         {
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+                Application.OpenForms[i].Hide();
             frm_Review frm = new frm_Review();
             frm.ShowDialog();
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+                Application.OpenForms[i].Close();
         }
 
         private void icon_export(ToolStrip menu)
@@ -122,7 +153,35 @@ namespace flashcard
             iconExport.Name = "iconExport";
             iconExport.Text = "Export";
             common_menustrip(iconExport, menu);
+            iconExport.Click += new EventHandler(iconExport_Click);
         }
+        private void copyAlltoClipboard(DataGridView tabData)
+        {
+            tabData.ReadOnly = true;
+            tabData.SelectAll();
+            DataObject dataObj = tabData.GetClipboardContent();
+            if (dataObj != null)
+                Clipboard.SetDataObject(dataObj);
+        }
+        private void iconExport_Click(object sender, EventArgs e)
+        {
+            frm_library frm_Library = new frm_library();
+            DataGridView gridView = frm_Library.getDataGridView();
+            copyAlltoClipboard(gridView);
+            Microsoft.Office.Interop.Excel.Application xlexcel;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+            xlexcel = new Excel.Application();
+            xlexcel.Visible = true;
+            xlWorkBook = xlexcel.Workbooks.Add(misValue);
+            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            Excel.Range CR = (Excel.Range)xlWorkSheet.Cells[1, 1];
+            CR.Select();
+            xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+            gridView.ReadOnly = false;
+        }
+
         private void icon_About(ToolStrip menu)
         {
             ToolStripButton iconHelp = new ToolStripButton();
@@ -136,8 +195,24 @@ namespace flashcard
 
         private void iconAbout_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+                Application.OpenForms[i].Hide();
             frm_about frm_About = new frm_about();
             frm_About.ShowDialog();
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+                Application.OpenForms[i].Close();
+        }
+        public int IsSignined()
+        {
+            Flash_Card contex = new Flash_Card();
+            foreach (var item in contex.Accounts.ToList())
+            {
+                if (item.Status == true)
+                {
+                    return item.ID_Account;
+                }
+            }
+            return -1;
         }
     }
 }

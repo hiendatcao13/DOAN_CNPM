@@ -39,19 +39,21 @@
             this.menu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.menu.Size = new System.Drawing.Size(377, 1590);
+            this.menu.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.menu.Size = new System.Drawing.Size(251, 690);
             this.menu.TabIndex = 0;
             this.menu.Text = "toolStrip1";
             // 
             // frm_main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2884, 1590);
+            this.ClientSize = new System.Drawing.Size(1283, 690);
             this.Controls.Add(this.menu);
-            this.MinimumSize = new System.Drawing.Size(1436, 1014);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(963, 673);
             this.Name = "frm_main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);

@@ -1,12 +1,16 @@
-﻿using System;
+﻿using CustomControls.RJControls;
+using flashcard.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace flashcard
@@ -18,6 +22,9 @@ namespace flashcard
         System.Drawing.Color lightpink = System.Drawing.ColorTranslator.FromHtml("#FFE5E5");
         System.Drawing.Color pink = System.Drawing.ColorTranslator.FromHtml("#FFBFBF");
         System.Drawing.Color yellow = System.Drawing.ColorTranslator.FromHtml("#FEFDCA");
+        static frm_main frm = new frm_main();
+        int idAcc = frm.IsSignined();
+        OpenFileDialog file = new OpenFileDialog();
         public frm_Account()
         {
             InitializeComponent();
@@ -45,21 +52,36 @@ namespace flashcard
             this.AutoSize = false;
             this.Width = 1440;
             this.Height = 1024;
-            menu.Width = 96;
-            menu.Height = this.Height;
-            menu.BackColor = lightpink;
-        }
-        private void getMenu()
-        {
-            frm_main frm = new frm_main();
-            frm.TaskBar(menu);
-            icon_logo(menu);
+            txt_Display_Name.BackColor = txt_Email.BackColor = txt_Password.BackColor = txt_Username.BackColor =lightpink;
+            
         }
 
-        private void frm_Account_Load(object sender, EventArgs e)
+        public void frm_Account_Load(object sender, EventArgs e)
         {
             resize_form();
-            getMenu();
+            BindForm(idAcc);
+        }
+
+        private void BindForm(int idAcc)
+        {
+            Flash_Card context = new Flash_Card();
+            Account acc= context.Accounts.ToList().Where(p => p.ID_Account == idAcc).FirstOrDefault();
+            if (acc == null)
+                return;
+            txt_Display_Name.Texts = acc.DisplayName;
+            txt_Username.Texts = acc.Username;
+            txt_Password.Texts = acc.Password;
+            txt_Email.Texts = acc.Email;
+            Load_Ava(acc);
+        }
+
+        private void Load_Ava(Account acc)
+        {
+            if(acc.Picture != null)
+            {
+                string filePath = Path.Combine(System.IO.Path.GetFullPath(@"..\..\"), @"Resources\");
+                pictureBox1.Image = System.Drawing.Image.FromFile(filePath + acc.Picture);
+            }
         }
 
         private void btn_Sign_in_Click(object sender, EventArgs e)
@@ -76,12 +98,58 @@ namespace flashcard
 
         private void btn_Save_Imformation_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Flash_Card context = new Flash_Card();
+                Account account = context.Accounts.ToList().Where(p => p.ID_Account == idAcc).FirstOrDefault();
+                account.DisplayName = txt_Display_Name.Texts;
+                account.Username = txt_Username.Texts;
+                account.Password = txt_Password.Texts;
+                account.Email = txt_Email.Texts;
+                if (pictureBox1.Image != null)
+                {
+                    //thuộc tính Picture chỉ lưu tên tấm ảnh
+                    string filePath = Path.Combine(System.IO.Path.GetFullPath(@"..\..\"), @"Resources\");
+                    //Sửa lại tên file = tên textbox "word" với ngày giờ để tránh trùng tên (ví dụ record vừa là động từ vừa là danh từ)
+                    string newimage_name = txt_Username.Texts + ".png";
+                    // copy file tới thư mục resources
+                    File.Copy(file.FileName, filePath + newimage_name);
+                    //thuộc tính Picture chỉ lưu tên tấm ảnh
 
+                    account.Picture = newimage_name;
+                }
+                context.SaveChanges();
+                MessageBox.Show("Đã lưu thay đổi");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        private void txt_Password__TextChanged(object sender, EventArgs e)
+        private void btn_Log_Out_Click(object sender, EventArgs e)
         {
+            Flash_Card context = new Flash_Card();
+            Account acc = context.Accounts.ToList().Where(p => p.ID_Account == idAcc).FirstOrDefault();
+            acc.Status = false;
+            context.SaveChanges();
+            Environment.Exit(0);
+        }
 
+        private void txt_Password_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (txt_Username.PasswordChar == true)
+                txt_Username.PasswordChar = false;
+            else
+                txt_Username.PasswordChar = true;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            
+            file.Filter = " Image Files|*.jpg;*.jpeg;*.png;*.gif;*.tif;...";
+            file.ShowDialog();
+            pictureBox1.ImageLocation = file.FileName;
         }
     }
 }

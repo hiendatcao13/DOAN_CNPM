@@ -1,4 +1,5 @@
-﻿using System;
+﻿using flashcard.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,9 +15,14 @@ namespace flashcard
         [STAThread]
         static void Main()
         {
+            Flash_Card db = new Flash_Card();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_main());
+            Account account = db.Accounts.FirstOrDefault(p => p.Status == true);
+            if(account == null)
+                Application.Run(new frm_Sign_in());
+            else
+                Application.Run(new frm_main());
         }
     }
 }

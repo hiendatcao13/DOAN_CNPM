@@ -97,7 +97,7 @@ namespace flashcard
             using (Flash_Card dbContext = new Flash_Card())
             {
                 // Lấy tất cả các bản ghi từ bảng Cards
-                cardNames = dbContext.Card.ToList();
+                cardNames = dbContext.Cards.ToList();
             }
 
             return cardNames;
@@ -127,7 +127,7 @@ namespace flashcard
                 using (Flash_Card dbContext = new Flash_Card())
                 {
                     // Lấy thông tin Card dựa trên ID
-                    Card currentCard = dbContext.Card.Find(cardId);
+                    Card currentCard = dbContext.Cards.Find(cardId);
 
                     if (showingDescription)
                     {
@@ -215,7 +215,6 @@ namespace flashcard
         {
             if (Cards != null && Cards.Count > 0)
             {
-
                 isReviewing = true;
                 currentCardIndex = 0;
                 totalRemembered = 0;
@@ -237,12 +236,12 @@ namespace flashcard
             Progress_Bar.Value = 0;
             btn_No_Remember.Enabled= true;
             btn_StartReview.Enabled= true;
-            MessageBox.Show($"Số từ đã Remember: {totalRemembered}, Số từ Not Remember: {totalNotRemembered}");
+            MessageBox.Show($"Số từ đã Remember: {totalRemembered} /n , Số từ Not Remember: {totalNotRemembered}");
         }
 
         private void btn_StartReview_Click(object sender, EventArgs e)
         {
-            showingDescription = false;
+            showingDescription = false; // nếu 
             StartReview();
 
             btn_StartReview.Enabled = false;
@@ -257,9 +256,26 @@ namespace flashcard
         {
             if (isReviewing && currentCardIndex < Cards.Count)
             {
-                  currentCardIndex++;
-                  ShowCard(currentCardIndex);
-                  btn_No_Remember.Enabled = true;
+                Cards[currentCardIndex].Last_Modify = DateTime.Now;
+
+                using (Flash_Card dbContext = new Flash_Card())
+                {
+                    dbContext.Entry(Cards[currentCardIndex]).State = EntityState.Modified;
+                    dbContext.SaveChanges();
+                }
+
+                currentCardIndex++;
+
+                if (currentCardIndex < Cards.Count)
+                {
+                    showingDescription = false; // Đặt lại biến showingDescription khi di chuyển đến thẻ tiếp theo
+                    ShowCard(currentCardIndex);
+                }
+                else
+                {
+                    EndReview();
+                }
+                btn_No_Remember.Enabled = true;
 
             }
         }

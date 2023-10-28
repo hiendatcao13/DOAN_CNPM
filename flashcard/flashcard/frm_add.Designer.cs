@@ -32,6 +32,7 @@
         {
             this.menu = new System.Windows.Forms.ToolStrip();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.rjTextBox2 = new CustomControls.RJControls.RJTextBox();
             this.rjComboBox1 = new flashcard.RJComboBox();
             this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
             this.rjButton6 = new CustomControls.RJControls.RJButton();
@@ -40,7 +41,6 @@
             this.rjButton3 = new CustomControls.RJControls.RJButton();
             this.rjButton2 = new CustomControls.RJControls.RJButton();
             this.rjButton1 = new CustomControls.RJControls.RJButton();
-            this.rjTextBox2 = new CustomControls.RJControls.RJTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,8 +59,31 @@
             this.pictureBox1.Location = new System.Drawing.Point(610, 725);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(367, 241);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // rjTextBox2
+            // 
+            this.rjTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(253)))), ((int)(((byte)(232)))));
+            this.rjTextBox2.BorderColor = System.Drawing.Color.Black;
+            this.rjTextBox2.BorderFocusColor = System.Drawing.Color.MediumAquamarine;
+            this.rjTextBox2.BorderRadius = 15;
+            this.rjTextBox2.BorderSize = 2;
+            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.rjTextBox2.Location = new System.Drawing.Point(610, 398);
+            this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.rjTextBox2.Multiline = true;
+            this.rjTextBox2.Name = "rjTextBox2";
+            this.rjTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rjTextBox2.PasswordChar = false;
+            this.rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rjTextBox2.PlaceholderText = "";
+            this.rjTextBox2.Size = new System.Drawing.Size(733, 241);
+            this.rjTextBox2.TabIndex = 10;
+            this.rjTextBox2.Texts = "";
+            this.rjTextBox2.UnderlinedStyle = false;
             // 
             // rjComboBox1
             // 
@@ -68,13 +91,9 @@
             this.rjComboBox1.BorderColor = System.Drawing.Color.Black;
             this.rjComboBox1.BorderSize = 3;
             this.rjComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.rjComboBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.rjComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjComboBox1.ForeColor = System.Drawing.Color.Black;
             this.rjComboBox1.IconColor = System.Drawing.Color.Black;
-            this.rjComboBox1.Items.AddRange(new object[] {
-            "a",
-            "B",
-            "C"});
             this.rjComboBox1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.rjComboBox1.ListTextColor = System.Drawing.Color.Black;
             this.rjComboBox1.Location = new System.Drawing.Point(610, 249);
@@ -92,7 +111,7 @@
             this.rjTextBox1.BorderFocusColor = System.Drawing.Color.MediumAquamarine;
             this.rjTextBox1.BorderRadius = 15;
             this.rjTextBox1.BorderSize = 2;
-            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.rjTextBox1.Location = new System.Drawing.Point(610, 100);
             this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -118,13 +137,14 @@
             this.rjButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButton6.ForeColor = System.Drawing.Color.Black;
-            this.rjButton6.Location = new System.Drawing.Point(1036, 725);
+            this.rjButton6.Location = new System.Drawing.Point(1010, 725);
             this.rjButton6.Name = "rjButton6";
             this.rjButton6.Size = new System.Drawing.Size(55, 40);
             this.rjButton6.TabIndex = 7;
             this.rjButton6.Text = "...";
             this.rjButton6.TextColor = System.Drawing.Color.Black;
             this.rjButton6.UseVisualStyleBackColor = false;
+            this.rjButton6.Click += new System.EventHandler(this.rjButton6_Click);
             // 
             // rjButton5
             // 
@@ -137,13 +157,14 @@
             this.rjButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton5.Font = new System.Drawing.Font("Yu Gothic", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButton5.ForeColor = System.Drawing.Color.Black;
-            this.rjButton5.Location = new System.Drawing.Point(1110, 897);
+            this.rjButton5.Location = new System.Drawing.Point(1093, 897);
             this.rjButton5.Name = "rjButton5";
             this.rjButton5.Size = new System.Drawing.Size(211, 67);
             this.rjButton5.TabIndex = 6;
             this.rjButton5.Text = "Save";
             this.rjButton5.TextColor = System.Drawing.Color.Black;
             this.rjButton5.UseVisualStyleBackColor = false;
+            this.rjButton5.Click += new System.EventHandler(this.rjButton5_Click);
             // 
             // rjButton4
             // 
@@ -221,34 +242,12 @@
             this.rjButton1.TextColor = System.Drawing.Color.Black;
             this.rjButton1.UseVisualStyleBackColor = false;
             // 
-            // rjTextBox2
-            // 
-            this.rjTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(253)))), ((int)(((byte)(232)))));
-            this.rjTextBox2.BorderColor = System.Drawing.Color.Black;
-            this.rjTextBox2.BorderFocusColor = System.Drawing.Color.MediumAquamarine;
-            this.rjTextBox2.BorderRadius = 15;
-            this.rjTextBox2.BorderSize = 2;
-            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox2.Location = new System.Drawing.Point(610, 398);
-            this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox2.Multiline = true;
-            this.rjTextBox2.Name = "rjTextBox2";
-            this.rjTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox2.PasswordChar = false;
-            this.rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox2.PlaceholderText = "";
-            this.rjTextBox2.Size = new System.Drawing.Size(733, 241);
-            this.rjTextBox2.TabIndex = 10;
-            this.rjTextBox2.Texts = "";
-            this.rjTextBox2.UnderlinedStyle = false;
-            // 
             // frm_add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(834, 484);
+            this.ClientSize = new System.Drawing.Size(1544, 799);
             this.Controls.Add(this.rjTextBox2);
             this.Controls.Add(this.rjComboBox1);
             this.Controls.Add(this.rjTextBox1);

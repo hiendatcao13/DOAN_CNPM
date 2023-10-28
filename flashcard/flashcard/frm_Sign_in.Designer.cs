@@ -69,7 +69,7 @@
             this.txt_UserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_UserName.Location = new System.Drawing.Point(465, 258);
             this.txt_UserName.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_UserName.Multiline = false;
+            this.txt_UserName.Multiline = true;
             this.txt_UserName.Name = "txt_UserName";
             this.txt_UserName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txt_UserName.PasswordChar = false;
@@ -104,22 +104,23 @@
             // 
             // btn_Sign_in
             // 
-            this.btn_Sign_in.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_Sign_in.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_Sign_in.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_Sign_in.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_Sign_in.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_Sign_in.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Sign_in.BorderRadius = 18;
-            this.btn_Sign_in.BorderSize = 0;
+            this.btn_Sign_in.BorderSize = 3;
             this.btn_Sign_in.FlatAppearance.BorderSize = 0;
             this.btn_Sign_in.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Sign_in.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Sign_in.ForeColor = System.Drawing.Color.White;
+            this.btn_Sign_in.ForeColor = System.Drawing.Color.Black;
             this.btn_Sign_in.Location = new System.Drawing.Point(826, 455);
             this.btn_Sign_in.Name = "btn_Sign_in";
             this.btn_Sign_in.Size = new System.Drawing.Size(188, 42);
             this.btn_Sign_in.TabIndex = 6;
             this.btn_Sign_in.Text = "Sign in";
-            this.btn_Sign_in.TextColor = System.Drawing.Color.White;
+            this.btn_Sign_in.TextColor = System.Drawing.Color.Black;
             this.btn_Sign_in.UseVisualStyleBackColor = false;
+            this.btn_Sign_in.Click += new System.EventHandler(this.btn_Sign_in_Click);
             // 
             // label3
             // 
@@ -150,11 +151,13 @@
             this.lbl_Register.Size = new System.Drawing.Size(97, 32);
             this.lbl_Register.TabIndex = 10;
             this.lbl_Register.Text = "Register";
+            this.lbl_Register.Click += new System.EventHandler(this.lbl_Register_Click);
             // 
             // frm_Sign_in
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1257, 714);
             this.Controls.Add(this.lbl_Register);
             this.Controls.Add(this.label5);
@@ -166,6 +169,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frm_Sign_in";
             this.Text = "frm_Sign_in";
+            this.Load += new System.EventHandler(this.frm_Sign_in_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

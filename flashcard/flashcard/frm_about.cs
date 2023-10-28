@@ -61,6 +61,16 @@ namespace flashcard
             logo.Region = rg;
             Controls.Add(logo);
             logo.BringToFront();
+            logo.Click += new EventHandler(show_account);
+        }
+        private void show_account(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+                Application.OpenForms[i].Hide();
+            frm_Account account = new frm_Account();
+            account.ShowDialog();
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+                Application.OpenForms[i].Close();
         }
 
         private void icon_mem1() 

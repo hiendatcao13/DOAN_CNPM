@@ -51,8 +51,8 @@ namespace flashcard
             // 
             // btn_StartReview
             // 
-            this.btn_StartReview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btn_StartReview.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_StartReview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_StartReview.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_StartReview.BorderColor = System.Drawing.Color.Black;
             this.btn_StartReview.BorderRadius = 20;
             this.btn_StartReview.BorderSize = 3;
@@ -60,9 +60,9 @@ namespace flashcard
             this.btn_StartReview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_StartReview.Font = new System.Drawing.Font("Consolas", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_StartReview.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_StartReview.Location = new System.Drawing.Point(163, 883);
+            this.btn_StartReview.Location = new System.Drawing.Point(161, 836);
             this.btn_StartReview.Name = "btn_StartReview";
-            this.btn_StartReview.Size = new System.Drawing.Size(270, 47);
+            this.btn_StartReview.Size = new System.Drawing.Size(296, 64);
             this.btn_StartReview.TabIndex = 13;
             this.btn_StartReview.Text = "Start Review";
             this.btn_StartReview.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -71,8 +71,8 @@ namespace flashcard
             // 
             // btn_Stop_Review
             // 
-            this.btn_Stop_Review.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_Stop_Review.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_Stop_Review.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_Stop_Review.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_Stop_Review.BorderColor = System.Drawing.Color.Black;
             this.btn_Stop_Review.BorderRadius = 20;
             this.btn_Stop_Review.BorderSize = 3;
@@ -80,9 +80,9 @@ namespace flashcard
             this.btn_Stop_Review.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Stop_Review.Font = new System.Drawing.Font("Consolas", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Stop_Review.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Stop_Review.Location = new System.Drawing.Point(602, 883);
+            this.btn_Stop_Review.Location = new System.Drawing.Point(602, 836);
             this.btn_Stop_Review.Name = "btn_Stop_Review";
-            this.btn_Stop_Review.Size = new System.Drawing.Size(270, 47);
+            this.btn_Stop_Review.Size = new System.Drawing.Size(296, 64);
             this.btn_Stop_Review.TabIndex = 12;
             this.btn_Stop_Review.Text = "End Review";
             this.btn_Stop_Review.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -91,8 +91,8 @@ namespace flashcard
             // 
             // btn_Next
             // 
-            this.btn_Next.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(253)))), ((int)(((byte)(232)))));
-            this.btn_Next.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(253)))), ((int)(((byte)(232)))));
+            this.btn_Next.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_Next.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_Next.BorderColor = System.Drawing.Color.Black;
             this.btn_Next.BorderRadius = 20;
             this.btn_Next.BorderSize = 3;
@@ -100,9 +100,9 @@ namespace flashcard
             this.btn_Next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Next.Font = new System.Drawing.Font("Consolas", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Next.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Next.Location = new System.Drawing.Point(1067, 883);
+            this.btn_Next.Location = new System.Drawing.Point(1067, 836);
             this.btn_Next.Name = "btn_Next";
-            this.btn_Next.Size = new System.Drawing.Size(270, 47);
+            this.btn_Next.Size = new System.Drawing.Size(296, 64);
             this.btn_Next.TabIndex = 10;
             this.btn_Next.Text = "Next";
             this.btn_Next.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -138,7 +138,7 @@ namespace flashcard
             this.btn_No_Remember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_No_Remember.Font = new System.Drawing.Font("Consolas", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_No_Remember.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_No_Remember.Location = new System.Drawing.Point(911, 559);
+            this.btn_No_Remember.Location = new System.Drawing.Point(914, 624);
             this.btn_No_Remember.Name = "btn_No_Remember";
             this.btn_No_Remember.Size = new System.Drawing.Size(366, 133);
             this.btn_No_Remember.TabIndex = 4;
@@ -158,7 +158,7 @@ namespace flashcard
             this.btn_Remember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Remember.Font = new System.Drawing.Font("Consolas", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Remember.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Remember.Location = new System.Drawing.Point(239, 559);
+            this.btn_Remember.Location = new System.Drawing.Point(242, 624);
             this.btn_Remember.Name = "btn_Remember";
             this.btn_Remember.Size = new System.Drawing.Size(366, 133);
             this.btn_Remember.TabIndex = 3;
@@ -176,11 +176,11 @@ namespace flashcard
             this.btn_Content.BorderSize = 3;
             this.btn_Content.FlatAppearance.BorderSize = 0;
             this.btn_Content.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Content.Font = new System.Drawing.Font("Consolas", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Content.Font = new System.Drawing.Font("Consolas", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Content.ForeColor = System.Drawing.Color.Black;
-            this.btn_Content.Location = new System.Drawing.Point(385, 274);
+            this.btn_Content.Location = new System.Drawing.Point(340, 279);
             this.btn_Content.Name = "btn_Content";
-            this.btn_Content.Size = new System.Drawing.Size(751, 210);
+            this.btn_Content.Size = new System.Drawing.Size(821, 283);
             this.btn_Content.TabIndex = 9;
             this.btn_Content.TextColor = System.Drawing.Color.Black;
             this.btn_Content.UseVisualStyleBackColor = false;
