@@ -205,7 +205,7 @@ namespace flashcard
         public int IsSignined()
         {
             Flash_Card contex = new Flash_Card();
-            foreach (var item in contex.Accounts.ToList())
+            foreach (var item in contex.Account.ToList())
             {
                 if (item.Status == true)
                 {

@@ -37,7 +37,7 @@ namespace flashcard
         private void frm_library_Load(object sender, EventArgs e)
         {
             db = new Flash_Card();
-            account_id = db.Accounts.FirstOrDefault(p => p.Status == true).ID_Account;
+            account_id = db.Account.FirstOrDefault(p => p.Status == true).ID_Account;
             icon_logo();
             resize_form();
             getToolStrip();
@@ -53,7 +53,7 @@ namespace flashcard
         }
         private void fillCombobox()
         {
-            List<Category> categories = db.Categories.Where(p => p.ID_Account == account_id).ToList();
+            List<Category> categories = db.Category.Where(p => p.ID_Account == account_id).ToList();
             Category category = new Category();
             category.Name_Category = "<<All>>";
             categories.Insert(0, category);
@@ -83,7 +83,7 @@ namespace flashcard
             foreach (DataGridViewColumn column in tabWord.Columns)
                 column.Visible = true;
             tabWord.ColumnHeadersVisible = true;
-            BindGrid(db.Cards.ToList());
+            BindGrid(db.Card.ToList());
             return tabWord;
         }
         private void getToolStrip()
@@ -158,8 +158,8 @@ namespace flashcard
         }
         private List<Card> checkListCard()
         {
-            List<Category> categories = db.Categories.Where(p => p.ID_Account == account_id).ToList();
-            List<Card> cards = db.Cards.ToList();
+            List<Category> categories = db.Category.Where(p => p.ID_Account == account_id).ToList();
+            List<Card> cards = db.Card.ToList();
             List<Card> temp = new List<Card>();
             foreach (Card card in cards)
                 foreach (Category category in categories)
@@ -182,7 +182,7 @@ namespace flashcard
             visible_property(true);
             int index = getRowIndex = e.RowIndex;
             txtWord.Text = tabWord.Rows[index].Cells[0].Value.ToString();
-            Card card = db.Cards.FirstOrDefault(p => p.Name_Card == txtWord.Text);
+            Card card = db.Card.FirstOrDefault(p => p.Name_Card == txtWord.Text);
             txtDesc.Texts = card.Description;
             txtWord.Text = card.Name_Card;
             if (card.Picture == null)
@@ -210,7 +210,7 @@ namespace flashcard
                 if (txtWord.Text == "" || txtDesc.Texts == "")
                     throw new Exception("Please fill all information !");
                 txtSearch.Texts = "";
-                Card card = db.Cards.FirstOrDefault(p => p.Name_Card == txtWord.Text);
+                Card card = db.Card.FirstOrDefault(p => p.Name_Card == txtWord.Text);
                 card.Description = txtDesc.Texts;
                 if (card.Picture != null)
                     File.Delete(filePath + card.Picture);
@@ -223,7 +223,7 @@ namespace flashcard
                     //thuộc tính Picture chỉ lưu tên tấm ảnh
                     card.Picture = newimage_name;
                 }
-                db.Cards.AddOrUpdate(card);
+                db.Card.AddOrUpdate(card);
                 db.SaveChanges();
                 MessageBox.Show("Update word successfully !!!", "Congratulation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -254,7 +254,7 @@ namespace flashcard
                     txtSearch.Texts = "";
                     List<Card> cards = checkListCard();
                     Card card = cards.FirstOrDefault(p => p.Name_Card == txtWord.Text);
-                    db.Cards.Remove(card);
+                    db.Card.Remove(card);
                     db.SaveChanges();
                     MessageBox.Show("Delete flashcard successfully !!!", "Congratulation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     BindGrid(checkListCard());

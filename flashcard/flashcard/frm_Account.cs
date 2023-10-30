@@ -65,7 +65,7 @@ namespace flashcard
         private void BindForm(int idAcc)
         {
             Flash_Card context = new Flash_Card();
-            Account acc= context.Accounts.ToList().Where(p => p.ID_Account == idAcc).FirstOrDefault();
+            Account acc= context.Account.ToList().Where(p => p.ID_Account == idAcc).FirstOrDefault();
             if (acc == null)
                 return;
             txt_Display_Name.Texts = acc.DisplayName;
@@ -101,7 +101,7 @@ namespace flashcard
             try
             {
                 Flash_Card context = new Flash_Card();
-                Account account = context.Accounts.ToList().Where(p => p.ID_Account == idAcc).FirstOrDefault();
+                Account account = context.Account.ToList().Where(p => p.ID_Account == idAcc).FirstOrDefault();
                 account.DisplayName = txt_Display_Name.Texts;
                 account.Username = txt_Username.Texts;
                 account.Password = txt_Password.Texts;
@@ -130,7 +130,7 @@ namespace flashcard
         private void btn_Log_Out_Click(object sender, EventArgs e)
         {
             Flash_Card context = new Flash_Card();
-            Account acc = context.Accounts.ToList().Where(p => p.ID_Account == idAcc).FirstOrDefault();
+            Account acc = context.Account.ToList().Where(p => p.ID_Account == idAcc).FirstOrDefault();
             acc.Status = false;
             context.SaveChanges();
             Environment.Exit(0);

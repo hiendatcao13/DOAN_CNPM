@@ -25,7 +25,7 @@ namespace flashcard
             Flash_Card context = new Flash_Card();
             bool flag = false;//cờ để check xem có tài khoản hông
             Account account = new Account();
-            foreach(var item in context.Accounts.ToList())
+            foreach(var item in context.Account.ToList())
             {
                 if(item.Username.Equals( txt_UserName.Texts))
                 {

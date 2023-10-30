@@ -62,7 +62,7 @@
             // 
             this.txt_UserName.BackColor = System.Drawing.SystemColors.Window;
             this.txt_UserName.BorderColor = System.Drawing.Color.Black;
-            this.txt_UserName.BorderFocusColor = System.Drawing.Color.Black;
+            this.txt_UserName.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txt_UserName.BorderRadius = 15;
             this.txt_UserName.BorderSize = 2;
             this.txt_UserName.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

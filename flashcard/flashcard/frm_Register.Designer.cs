@@ -47,6 +47,7 @@
             this.lblRePass = new System.Windows.Forms.Label();
             this.image = new System.Windows.Forms.PictureBox();
             this.btnUpload = new CustomControls.RJControls.RJButton();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image)).BeginInit();
             this.SuspendLayout();
@@ -313,11 +314,23 @@
             this.btnUpload.UseVisualStyleBackColor = false;
             this.btnUpload.Click += new System.EventHandler(this.rjButton1_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(902, 388);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(102, 17);
+            this.checkBox1.TabIndex = 22;
+            this.checkBox1.Text = "Show Password";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // frm_Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1257, 714);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.image);
             this.Controls.Add(this.lblRePass);
             this.Controls.Add(this.lbl_Register);
@@ -366,5 +379,6 @@
         private System.Windows.Forms.Label lblRePass;
         private System.Windows.Forms.PictureBox image;
         private CustomControls.RJControls.RJButton btnUpload;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

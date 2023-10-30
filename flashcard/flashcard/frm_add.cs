@@ -96,7 +96,7 @@ namespace flashcard
                     frm_main form = new frm_main();
                     int idAccount = form.IsSignined();
                     category.ID_Account = idAccount;
-                    context.Categories.Add(category);
+                    context.Category.Add(category);
                     context.SaveChanges();
                 }
             }
@@ -117,7 +117,7 @@ namespace flashcard
                 Flash_Card context = new Flash_Card();
                 update_Category(context);
                 //kiểm tra lặp từ
-                foreach (var item in context.Cards.ToList())
+                foreach (var item in context.Card.ToList())
                 {
                     if (String.Compare(item.Name_Card, rjTextBox1.Texts, true) == 0)
                     {
@@ -151,10 +151,10 @@ namespace flashcard
 
                     card.Picture = newimage_name;
                 }
-                card.Category_ID = context.Categories.FirstOrDefault(p => p.Name_Category == rjComboBox1.Texts).ID_Category;
+                card.Category_ID = context.Category.FirstOrDefault(p => p.Name_Category == rjComboBox1.Texts).ID_Category;
                 card.Level_ID = 1;
                 card.Last_Modify = DateTime.Now;
-                context.Cards.Add(card);
+                context.Card.Add(card);
                 context.SaveChanges();
 
             }
@@ -180,7 +180,7 @@ namespace flashcard
             frm_main form = new frm_main();
             int idAccount = form.IsSignined();
             Flash_Card context = new Flash_Card();
-            List<Category> categories = context.Categories.Where(p => p.ID_Account == idAccount).ToList();
+            List<Category> categories = context.Category.Where(p => p.ID_Account == idAccount).ToList();
             this.rjComboBox1.DataSource = categories;
             this.rjComboBox1.DisplayMember = "Name_Category";
             this.rjComboBox1.ValueMember = "ID_Category";

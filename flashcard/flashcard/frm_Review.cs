@@ -50,6 +50,16 @@ namespace flashcard
             logo.Region = rg;
             Controls.Add(logo);
             logo.BringToFront();
+            logo.Click += new EventHandler(show_account);
+        }
+        private void show_account(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+                Application.OpenForms[i].Hide();
+            frm_Account account = new frm_Account();
+            account.ShowDialog();
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+                Application.OpenForms[i].Close();
         }
         private void resize_form() // chỉnh lại tỷ lệ của form
         {
@@ -86,21 +96,34 @@ namespace flashcard
             resize_form();
             getMenu();
 
-            // Load danh sách Card Names khi form được nạp
-            Cards = GetCardNames();
+            // Lấy danh sách thẻ theo tài khoản đã đăng nhập
+            Flash_Card dbContext = new Flash_Card();
+            int accountId = dbContext.Account.FirstOrDefault(p => p.Status == true).ID_Account;
+            Cards = GetCardNames(accountId);
         }
 
-        private List<Card> GetCardNames()
+        private List<Card> GetCardNames(int accountId)
         {
-            List<Card> cardNames = new List<Card>();
+            List<Card> ListCard = new List<Card>();
 
             using (Flash_Card dbContext = new Flash_Card())
             {
-                // Lấy tất cả các bản ghi từ bảng Cards
-                cardNames = dbContext.Cards.ToList();
+                var cards = dbContext.Card
+                    .Where(card => card.Category.ID_Account == accountId)
+                    .ToList();
+
+                foreach (var card in cards)
+                {
+                    int minutes = getTime(card);
+
+                    if (card.Last_Modify.AddMinutes(minutes) <= DateTime.Now.Date)
+                    {
+                        ListCard.Add(card);
+                    }
+                }
             }
 
-            return cardNames;
+            return ListCard;
         }
 
         private void UpdateProgressBar()
@@ -113,12 +136,12 @@ namespace flashcard
         {
             if (isReviewing && index < Cards.Count)
             {
-                int cardId = Cards[index].ID_Card; // Lấy ID của thẻ hiện tại
-                int levelId = Cards[index].Level_ID; // Lấy Level_ID của thẻ hiện tại
+                int cardId = Cards[index].ID_Card;
+                int levelId = Cards[index].Level_ID;
 
                 if (levelId >= 5)
                 {
-                    // Nếu Level_ID là 5 hoặc cao hơn, bỏ qua từ này
+                    // Bỏ qua từ này nếu Level_ID là 5 hoặc cao hơn
                     currentCardIndex++;
                     ShowCard(currentCardIndex);
                     return;
@@ -126,17 +149,14 @@ namespace flashcard
 
                 using (Flash_Card dbContext = new Flash_Card())
                 {
-                    // Lấy thông tin Card dựa trên ID
-                    Card currentCard = dbContext.Cards.Find(cardId);
+                    Card currentCard = dbContext.Card.Find(cardId);
 
                     if (showingDescription)
                     {
-                        // Hiển thị Description của Card
                         btn_Content.Text = currentCard.Description;
                     }
                     else
                     {
-                        // Hiển thị Card Name
                         btn_Content.Text = currentCard.Name_Card;
                     }
                 }
@@ -213,6 +233,13 @@ namespace flashcard
 
         private void StartReview()
         {
+            // Lấy danh sách thẻ theo tài khoản đã đăng nhập
+            using (Flash_Card dbContext = new Flash_Card())
+            {
+                int accountId = dbContext.Account.FirstOrDefault(p => p.Status == true).ID_Account;
+                Cards = GetCardNames(accountId);
+            }
+
             if (Cards != null && Cards.Count > 0)
             {
                 isReviewing = true;
@@ -224,7 +251,7 @@ namespace flashcard
             }
             else
             {
-                MessageBox.Show("Không có thẻ nào trong danh mục này.");
+                MessageBox.Show("Không có thẻ cần ôn tập.");
             }
         }
 
@@ -236,7 +263,7 @@ namespace flashcard
             Progress_Bar.Value = 0;
             btn_No_Remember.Enabled= true;
             btn_StartReview.Enabled= true;
-            MessageBox.Show($"Số từ đã Remember: {totalRemembered} /n , Số từ Not Remember: {totalNotRemembered}");
+            MessageBox.Show($"Số từ đã Remember: {totalRemembered} , Số từ Not Remember: {totalNotRemembered}");
         }
 
         private void btn_StartReview_Click(object sender, EventArgs e)
@@ -280,6 +307,14 @@ namespace flashcard
             }
         }
 
+        private int getTime(Card card)
+        {
+            using (Flash_Card db = new Flash_Card())
+            {
+                var level = db.Level.FirstOrDefault(l => l.ID_Level == card.Level_ID);
+                return (level != null) ? level.Time : -1;
+            }
+        }
 
     }
 }

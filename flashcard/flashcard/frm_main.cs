@@ -51,8 +51,8 @@ namespace flashcard
         }
         private void animation(Button btn, int level)
         {
-            int sum = db.Cards.Count();
-            int count = db.Cards.Where(p => p.Level_ID == level).Count();
+            int sum = db.Card.Count();
+            int count = db.Card.Where(p => p.Level_ID == level).Count();
             if(count == 0)
             {
                 btn.Visible = false;
@@ -92,7 +92,7 @@ namespace flashcard
                     TextAlign = ContentAlignment.MiddleCenter,
                     Size = new System.Drawing.Size(131, 50),
                     TabIndex = 2,
-                    Text = db.Cards.Where(p => p.Level_ID == (i+1)).Count().ToString(),
+                    Text = db.Card.Where(p => p.Level_ID == (i+1)).Count().ToString(),
                     Font = new Font("Comfortaa", 35),
                 };
                 if (number_word.Text == "0")
@@ -138,7 +138,7 @@ namespace flashcard
                 TabIndex = 1,
                 TabStop = false,
             };
-            int count = db.Cards.Count();
+            int count = db.Card.Count();
             Label text = new Label
             {
                 Location = new System.Drawing.Point(302, 98),
@@ -183,8 +183,8 @@ namespace flashcard
         private int count_streak()
         {
             int count = 0;
-            List<Card> cards = db.Cards.ToList();
-            DateTime max = db.Cards.FirstOrDefault().Last_Modify;
+            List<Card> cards = db.Card.ToList();
+            DateTime max = db.Card.FirstOrDefault().Last_Modify;
             foreach (var item in cards)
                 max = (max > item.Last_Modify) ? max : item.Last_Modify;
             if (max.AddDays(2).Date <= DateTime.Now.Date)

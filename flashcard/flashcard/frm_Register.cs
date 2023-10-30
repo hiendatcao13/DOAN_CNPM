@@ -30,7 +30,7 @@ namespace flashcard
                 throw new Exception("The password and repassword is not the same. Check again!");
             if (!HasSpecialChars(txtPassword.Texts) || !txtPassword.Texts.Any(c => char.IsUpper(c)))
                 throw new Exception("The password is too weak!!! Try again");
-            List<Account> accounts = db.Accounts.ToList();
+            List<Account> accounts = db.Account.ToList();
             Account temp = accounts.FirstOrDefault(p => p.Username == txtUserName.Text);
             if (temp != null)
                 throw new Exception("This username is already exist !");
@@ -60,7 +60,7 @@ namespace flashcard
                 account.Password = txtPassword.Texts;
                 save_Image(account);
                 account.Status = false;
-                db.Accounts.Add(account);
+                db.Account.Add(account);
                 db.SaveChanges();
                 MessageBox.Show("Register account successfully ! Please sign in");
                 this.Hide();
@@ -124,7 +124,7 @@ namespace flashcard
 
         private void txtUserName__TextChanged(object sender, EventArgs e)
         {
-            List<Account> accounts = db.Accounts.ToList();
+            List<Account> accounts = db.Account.ToList();
             Account temp = accounts.FirstOrDefault(p => p.Username == txtUserName.Text);
             if (temp == null)
                 errorInput.Clear();
@@ -140,6 +140,28 @@ namespace flashcard
             frm.ShowDialog();
             for (int i = 0; i < Application.OpenForms.Count; i++)
                 Application.OpenForms[i].Close();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == true )
+            {
+                txtPassword.PasswordChar = false;
+                
+            }
+            else
+            {
+                txtPassword.PasswordChar = true;
+            }
+            if (txtRepassword.PasswordChar == true)
+            {
+                txtRepassword.PasswordChar = false;
+            }
+            else
+            {
+                txtRepassword.PasswordChar = true;
+            }
+           
         }
     }
 }
