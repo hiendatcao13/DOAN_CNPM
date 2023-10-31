@@ -62,6 +62,12 @@
     <Compile Include="ComboBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="frmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTest.Designer.cs">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_about.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmTest.resx">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_about.resx">
       <DependentUpon>frm_about.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +240,17 @@
   <ItemGroup>
     <None Include="Resources\mem1.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\CHDat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DTDung.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DDLinh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DuyLinh.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

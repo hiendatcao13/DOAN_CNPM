@@ -30,7 +30,7 @@ namespace flashcard
             tool.ImageTransparentColor = Color.Magenta;
             tool.Size = new Size(96, 96);
             tool.ImageScaling = ToolStripItemImageScaling.SizeToFit;
-            tool.Font = new Font("Consolas", 17, FontStyle.Bold);
+            tool.Font = new Font("Yu Gothic UI", 17, FontStyle.Bold);
             tool.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
             tool.TextImageRelation = TextImageRelation.ImageAboveText;
             menu.Items.Add(tool);
@@ -205,7 +205,7 @@ namespace flashcard
         public int IsSignined()
         {
             Flash_Card contex = new Flash_Card();
-            foreach (var item in contex.Account.ToList())
+            foreach (var item in contex.Accounts.ToList())
             {
                 if (item.Status == true)
                 {

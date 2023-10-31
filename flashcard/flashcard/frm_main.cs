@@ -22,6 +22,7 @@ namespace flashcard
         System.Drawing.Color pink = System.Drawing.ColorTranslator.FromHtml("#FFBFBF");
         System.Drawing.Color yellow = System.Drawing.ColorTranslator.FromHtml("#FEFDCA");
         Flash_Card db;
+        int account_id;
         public frm_main()
         {
             InitializeComponent();
@@ -33,13 +34,14 @@ namespace flashcard
             menu.Width = 96;
             menu.Height = this.Height;
             menu.BackColor = lightpink;
-            db = new Flash_Card();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            db = new Flash_Card();
+            account_id = db.Accounts.FirstOrDefault(p => p.Status == true).ID_Account;
             resize_form();
-            taskbar_Level();
             TaskBar(menu);
+            taskbar_Level();
             handbook();
             trophy();
         }
@@ -49,10 +51,31 @@ namespace flashcard
             e.Graphics.DrawLine(line, 189, 853, 1147, 853);
 
         }
-        private void animation(Button btn, int level)
+        private List<Card> getAllCard()
         {
-            int sum = db.Card.Count();
-            int count = db.Card.Where(p => p.Level_ID == level).Count();
+            Flash_Card db = new Flash_Card();
+            int account_id = db.Accounts.FirstOrDefault(p => p.Status == true).ID_Account;
+            List<Category> categories = db.Categories.Where(p => p.ID_Account == account_id).ToList();
+            List<Card> cards = db.Cards.ToList();
+            List<Level> levels = db.Levels.ToList();
+            List<Card> temp = new List<Card>();
+            foreach (Card card_item in cards)
+            {
+                foreach (Category category_item in categories)
+                    if (card_item.Category_ID == category_item.ID_Category)
+                        temp.Add(card_item);
+            }
+            if(temp.Count == 0)
+            {
+                Card card = new Card();
+                temp.Add(card);
+            }
+            return temp;
+        }
+            private void animation(Button btn, int level)
+        {
+            int sum = getAllCard().Count;
+            int count = getAllCard().Where(p => p.Level_ID == level).Count();
             if(count == 0)
             {
                 btn.Visible = false;
@@ -92,8 +115,8 @@ namespace flashcard
                     TextAlign = ContentAlignment.MiddleCenter,
                     Size = new System.Drawing.Size(131, 50),
                     TabIndex = 2,
-                    Text = db.Card.Where(p => p.Level_ID == (i+1)).Count().ToString(),
-                    Font = new Font("Comfortaa", 35),
+                    Text = getAllCard().Where(p => p.Level_ID == (i+1)).Count().ToString(),
+                    Font = new Font("Yu Gothic UI", 35),
                 };
                 if (number_word.Text == "0")
                     number_word.Visible = false;
@@ -106,7 +129,7 @@ namespace flashcard
                     Size = new System.Drawing.Size(158, 95),
                     TabIndex = 2,
                     Text = (i + 1) + "",
-                    Font = new Font("Comfortaa", 35),
+                    Font = new Font("Yu Gothic UI", 35),
                 };
                 btn.FlatAppearance.BorderColor = Color.Black;
                 btn.FlatAppearance.BorderSize = 3;
@@ -121,7 +144,7 @@ namespace flashcard
                 Size = new System.Drawing.Size(206, 79),
                 TabIndex = 2,
                 Text = "Level",
-                Font = new Font("Comfortaa", 35),
+                Font = new Font("Yu Gothic UI", 35),
             };
             Controls.Add(txtlabel);
         }
@@ -138,7 +161,7 @@ namespace flashcard
                 TabIndex = 1,
                 TabStop = false,
             };
-            int count = db.Card.Count();
+            int count = getAllCard().Count();
             Label text = new Label
             {
                 Location = new System.Drawing.Point(302, 98),
@@ -148,7 +171,7 @@ namespace flashcard
                 Size = new System.Drawing.Size(487, 100),
                 TabIndex = 2,
                 Text = "contains " + count + " words",
-                Font = new Font("Comfortaa", 35),
+                Font = new Font("Yu Gothic UI", 35),
             };
             Controls.AddRange(new Control[] { handbook, text});
         }
@@ -175,7 +198,7 @@ namespace flashcard
                 TextAlign = ContentAlignment.TopCenter,
                 Size = new System.Drawing.Size(423, 65),
                 TabIndex = 2,
-                Font = new Font("Comfortaa", 35),
+                Font = new Font("Yu Gothic UI", 35),
             };
             text.Text = count_streak() + " days streak";
             Controls.AddRange(new Control[] { trophy, text });
@@ -183,8 +206,8 @@ namespace flashcard
         private int count_streak()
         {
             int count = 0;
-            List<Card> cards = db.Card.ToList();
-            DateTime max = db.Card.FirstOrDefault().Last_Modify;
+            List<Card> cards = getAllCard();
+            DateTime max = getAllCard().FirstOrDefault().Last_Modify;
             foreach (var item in cards)
                 max = (max > item.Last_Modify) ? max : item.Last_Modify;
             if (max.AddDays(2).Date <= DateTime.Now.Date)
@@ -194,8 +217,12 @@ namespace flashcard
             for(int i = 0; i < cards.Count; i++)
             {
                 foreach (var item in cards)
-                    if (item.Last_Modify.Date == max.AddDays(-(i + 1)))
+                    if (DateTime.Now.Date.AddDays(-(i+1)) == item.Last_Modify)
+                    {
                         count++;
+                        break;
+                    }
+
             }
             return count;
         }

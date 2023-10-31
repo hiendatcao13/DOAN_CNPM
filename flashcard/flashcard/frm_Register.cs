@@ -30,7 +30,7 @@ namespace flashcard
                 throw new Exception("The password and repassword is not the same. Check again!");
             if (!HasSpecialChars(txtPassword.Texts) || !txtPassword.Texts.Any(c => char.IsUpper(c)))
                 throw new Exception("The password is too weak!!! Try again");
-            List<Account> accounts = db.Account.ToList();
+            List<Account> accounts = db.Accounts.ToList();
             Account temp = accounts.FirstOrDefault(p => p.Username == txtUserName.Text);
             if (temp != null)
                 throw new Exception("This username is already exist !");
@@ -58,9 +58,10 @@ namespace flashcard
                 account.DisplayName = txt_Name.Texts;
                 account.Username = txtUserName.Texts;
                 account.Password = txtPassword.Texts;
+                account.Email = txtEmail.Texts;
                 save_Image(account);
                 account.Status = false;
-                db.Account.Add(account);
+                db.Accounts.Add(account);
                 db.SaveChanges();
                 MessageBox.Show("Register account successfully ! Please sign in");
                 this.Hide();
@@ -124,7 +125,7 @@ namespace flashcard
 
         private void txtUserName__TextChanged(object sender, EventArgs e)
         {
-            List<Account> accounts = db.Account.ToList();
+            List<Account> accounts = db.Accounts.ToList();
             Account temp = accounts.FirstOrDefault(p => p.Username == txtUserName.Text);
             if (temp == null)
                 errorInput.Clear();
@@ -136,32 +137,20 @@ namespace flashcard
         {
             for (int i = 0; i < Application.OpenForms.Count; i++)
                 Application.OpenForms[i].Hide();
-            frm_Register frm = new frm_Register();
+            frm_Sign_in frm = new frm_Sign_in();
             frm.ShowDialog();
             for (int i = 0; i < Application.OpenForms.Count; i++)
                 Application.OpenForms[i].Close();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void btnShowPass_Click(object sender, EventArgs e)
         {
-            if (txtPassword.PasswordChar == true )
-            {
-                txtPassword.PasswordChar = false;
-                
-            }
-            else
-            {
-                txtPassword.PasswordChar = true;
-            }
-            if (txtRepassword.PasswordChar == true)
-            {
-                txtRepassword.PasswordChar = false;
-            }
-            else
-            {
-                txtRepassword.PasswordChar = true;
-            }
-           
+            txtPassword.PasswordChar = !txtPassword.PasswordChar;
+        }
+
+        private void btnShowRepass_Click(object sender, EventArgs e)
+        {
+            txtRepassword.PasswordChar = !txtRepassword.PasswordChar;
         }
     }
 }

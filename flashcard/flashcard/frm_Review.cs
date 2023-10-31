@@ -77,7 +77,7 @@ namespace flashcard
             icon_logo(menu);
         }
         #endregion
-        
+
 
         public frm_Review()
         {
@@ -98,7 +98,7 @@ namespace flashcard
 
             // Lấy danh sách thẻ theo tài khoản đã đăng nhập
             Flash_Card dbContext = new Flash_Card();
-            int accountId = dbContext.Account.FirstOrDefault(p => p.Status == true).ID_Account;
+            int accountId = dbContext.Accounts.FirstOrDefault(p => p.Status == true).ID_Account;
             Cards = GetCardNames(accountId);
         }
 
@@ -108,7 +108,7 @@ namespace flashcard
 
             using (Flash_Card dbContext = new Flash_Card())
             {
-                var cards = dbContext.Card
+                var cards = dbContext.Cards
                     .Where(card => card.Category.ID_Account == accountId)
                     .ToList();
 
@@ -149,7 +149,7 @@ namespace flashcard
 
                 using (Flash_Card dbContext = new Flash_Card())
                 {
-                    Card currentCard = dbContext.Card.Find(cardId);
+                    Card currentCard = dbContext.Cards.Find(cardId);
 
                     if (showingDescription)
                     {
@@ -227,16 +227,16 @@ namespace flashcard
 
                 currentCardIndex++;
                 btn_No_Remember.Enabled = false;
-                
+
             }
         }
 
-        private void StartReview()
+        public void StartReview(List<Card> Cards)
         {
             // Lấy danh sách thẻ theo tài khoản đã đăng nhập
             using (Flash_Card dbContext = new Flash_Card())
             {
-                int accountId = dbContext.Account.FirstOrDefault(p => p.Status == true).ID_Account;
+                int accountId = dbContext.Accounts.FirstOrDefault(p => p.Status == true).ID_Account;
                 Cards = GetCardNames(accountId);
             }
 
@@ -261,15 +261,15 @@ namespace flashcard
 
             currentCardIndex = 0;
             Progress_Bar.Value = 0;
-            btn_No_Remember.Enabled= true;
-            btn_StartReview.Enabled= true;
+            btn_No_Remember.Enabled = true;
+            btn_StartReview.Enabled = true;
             MessageBox.Show($"Số từ đã Remember: {totalRemembered} , Số từ Not Remember: {totalNotRemembered}");
         }
 
         private void btn_StartReview_Click(object sender, EventArgs e)
         {
             showingDescription = false; // nếu 
-            StartReview();
+            StartReview(Cards);
 
             btn_StartReview.Enabled = false;
         }
@@ -311,10 +311,28 @@ namespace flashcard
         {
             using (Flash_Card db = new Flash_Card())
             {
-                var level = db.Level.FirstOrDefault(l => l.ID_Level == card.Level_ID);
+                var level = db.Levels.FirstOrDefault(l => l.ID_Level == card.Level_ID);
                 return (level != null) ? level.Time : -1;
             }
         }
-
+        string answer;
+        private void btn_Content_Click(object sender, EventArgs e)
+        {
+            if (btn_Content.Text.Contains("..."))
+            {
+                btn_Content.Text = answer;
+            }
+            else
+            {
+                answer = btn_Content.Text;
+                Flash_Card db = new Flash_Card();
+                string definition = db.Cards.FirstOrDefault(p => p.Name_Card == btn_Content.Text).Description;
+                btn_Content.Text = "..." + definition;
+            }
+        }
+        public void visible_remember(bool check)
+        {
+            btn_No_Remember.Visible = btn_No_Remember.Visible = check;
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace flashcard
             Flash_Card db = new Flash_Card();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Account account = db.Account.FirstOrDefault(p => p.Status == true);
+            Account account = db.Accounts.FirstOrDefault(p => p.Status == true);
             if(account == null)
                 Application.Run(new frm_Sign_in());
             else

@@ -39,6 +39,7 @@
             this.txt_Password = new CustomControls.RJControls.RJTextBox();
             this.txt_Username = new CustomControls.RJControls.RJTextBox();
             this.txt_Display_Name = new CustomControls.RJControls.RJTextBox();
+            this.menu = new System.Windows.Forms.ToolStrip();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,40 +62,40 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 16F);
+            this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 16F);
             this.label1.Location = new System.Drawing.Point(162, 139);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 30);
+            this.label1.Size = new System.Drawing.Size(146, 30);
             this.label1.TabIndex = 8;
             this.label1.Text = "Display Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Light", 16F);
+            this.label2.Font = new System.Drawing.Font("Yu Gothic UI", 16F);
             this.label2.Location = new System.Drawing.Point(162, 245);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 30);
+            this.label2.Size = new System.Drawing.Size(121, 30);
             this.label2.TabIndex = 9;
             this.label2.Text = "User Name";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Light", 16F);
+            this.label3.Font = new System.Drawing.Font("Yu Gothic UI", 16F);
             this.label3.Location = new System.Drawing.Point(162, 351);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 30);
+            this.label3.Size = new System.Drawing.Size(104, 30);
             this.label3.TabIndex = 10;
             this.label3.Text = "Password";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Light", 16F);
+            this.label4.Font = new System.Drawing.Font("Yu Gothic UI", 16F);
             this.label4.Location = new System.Drawing.Point(162, 457);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 30);
+            this.label4.Size = new System.Drawing.Size(64, 30);
             this.label4.TabIndex = 11;
             this.label4.Text = "Email";
             // 
@@ -107,7 +108,7 @@
             this.btn_Upload_Image.BorderSize = 3;
             this.btn_Upload_Image.FlatAppearance.BorderSize = 0;
             this.btn_Upload_Image.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Upload_Image.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Upload_Image.Font = new System.Drawing.Font("Yu Gothic UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Upload_Image.ForeColor = System.Drawing.Color.Black;
             this.btn_Upload_Image.Location = new System.Drawing.Point(989, 604);
             this.btn_Upload_Image.Name = "btn_Upload_Image";
@@ -127,7 +128,7 @@
             this.btn_Save_Imformation.BorderSize = 3;
             this.btn_Save_Imformation.FlatAppearance.BorderSize = 0;
             this.btn_Save_Imformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Save_Imformation.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Save_Imformation.Font = new System.Drawing.Font("Yu Gothic UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Save_Imformation.ForeColor = System.Drawing.Color.Black;
             this.btn_Save_Imformation.Location = new System.Drawing.Point(729, 606);
             this.btn_Save_Imformation.Name = "btn_Save_Imformation";
@@ -146,7 +147,7 @@
             this.txt_Email.BorderFocusColor = System.Drawing.Color.Black;
             this.txt_Email.BorderRadius = 11;
             this.txt_Email.BorderSize = 3;
-            this.txt_Email.Font = new System.Drawing.Font("Consolas", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Email.Font = new System.Drawing.Font("Consolas", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Email.ForeColor = System.Drawing.Color.Black;
             this.txt_Email.Location = new System.Drawing.Point(156, 491);
             this.txt_Email.Margin = new System.Windows.Forms.Padding(4);
@@ -169,7 +170,7 @@
             this.txt_Password.BorderFocusColor = System.Drawing.Color.Black;
             this.txt_Password.BorderRadius = 11;
             this.txt_Password.BorderSize = 3;
-            this.txt_Password.Font = new System.Drawing.Font("Consolas", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Password.Font = new System.Drawing.Font("Consolas", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Password.ForeColor = System.Drawing.Color.Black;
             this.txt_Password.Location = new System.Drawing.Point(156, 385);
             this.txt_Password.Margin = new System.Windows.Forms.Padding(4);
@@ -179,7 +180,7 @@
             this.txt_Password.PasswordChar = true;
             this.txt_Password.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txt_Password.PlaceholderText = "";
-            this.txt_Password.Size = new System.Drawing.Size(750, 55);
+            this.txt_Password.Size = new System.Drawing.Size(750, 53);
             this.txt_Password.TabIndex = 3;
             this.txt_Password.Texts = "";
             this.txt_Password.UnderlinedStyle = false;
@@ -192,7 +193,7 @@
             this.txt_Username.BorderFocusColor = System.Drawing.Color.Black;
             this.txt_Username.BorderRadius = 11;
             this.txt_Username.BorderSize = 3;
-            this.txt_Username.Font = new System.Drawing.Font("Consolas", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Username.Font = new System.Drawing.Font("Consolas", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Username.ForeColor = System.Drawing.Color.Black;
             this.txt_Username.Location = new System.Drawing.Point(156, 279);
             this.txt_Username.Margin = new System.Windows.Forms.Padding(4);
@@ -215,7 +216,7 @@
             this.txt_Display_Name.BorderFocusColor = System.Drawing.Color.Black;
             this.txt_Display_Name.BorderRadius = 11;
             this.txt_Display_Name.BorderSize = 3;
-            this.txt_Display_Name.Font = new System.Drawing.Font("Consolas", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Display_Name.Font = new System.Drawing.Font("Consolas", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Display_Name.ForeColor = System.Drawing.Color.Black;
             this.txt_Display_Name.Location = new System.Drawing.Point(156, 173);
             this.txt_Display_Name.Margin = new System.Windows.Forms.Padding(4);
@@ -225,10 +226,20 @@
             this.txt_Display_Name.PasswordChar = false;
             this.txt_Display_Name.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txt_Display_Name.PlaceholderText = "";
-            this.txt_Display_Name.Size = new System.Drawing.Size(750, 55);
+            this.txt_Display_Name.Size = new System.Drawing.Size(750, 53);
             this.txt_Display_Name.TabIndex = 1;
             this.txt_Display_Name.Texts = "";
             this.txt_Display_Name.UnderlinedStyle = false;
+            // 
+            // menu
+            // 
+            this.menu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.menu.Location = new System.Drawing.Point(0, 0);
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(26, 749);
+            this.menu.TabIndex = 12;
+            this.menu.Text = "toolStrip1";
             // 
             // frm_Account
             // 
@@ -237,6 +248,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.menu);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -249,7 +261,7 @@
             this.Controls.Add(this.txt_Username);
             this.Controls.Add(this.txt_Display_Name);
             this.Name = "frm_Account";
-            this.Text = "frm_Account";
+            this.Text = "LDD App";
             this.Load += new System.EventHandler(this.frm_Account_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -269,5 +281,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private CustomControls.RJControls.RJButton btn_Upload_Image;
+        private System.Windows.Forms.ToolStrip menu;
     }
 }

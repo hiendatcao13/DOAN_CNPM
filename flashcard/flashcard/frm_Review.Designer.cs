@@ -58,7 +58,7 @@ namespace flashcard
             this.btn_StartReview.BorderSize = 3;
             this.btn_StartReview.FlatAppearance.BorderSize = 4;
             this.btn_StartReview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_StartReview.Font = new System.Drawing.Font("Consolas", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_StartReview.Font = new System.Drawing.Font("Yu Gothic UI", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_StartReview.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_StartReview.Location = new System.Drawing.Point(161, 836);
             this.btn_StartReview.Name = "btn_StartReview";
@@ -78,7 +78,7 @@ namespace flashcard
             this.btn_Stop_Review.BorderSize = 3;
             this.btn_Stop_Review.FlatAppearance.BorderSize = 4;
             this.btn_Stop_Review.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Stop_Review.Font = new System.Drawing.Font("Consolas", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Stop_Review.Font = new System.Drawing.Font("Yu Gothic UI", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Stop_Review.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Stop_Review.Location = new System.Drawing.Point(602, 836);
             this.btn_Stop_Review.Name = "btn_Stop_Review";
@@ -98,7 +98,7 @@ namespace flashcard
             this.btn_Next.BorderSize = 3;
             this.btn_Next.FlatAppearance.BorderSize = 4;
             this.btn_Next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Next.Font = new System.Drawing.Font("Consolas", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Next.Font = new System.Drawing.Font("Yu Gothic UI", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Next.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Next.Location = new System.Drawing.Point(1067, 836);
             this.btn_Next.Name = "btn_Next";
@@ -136,7 +136,7 @@ namespace flashcard
             this.btn_No_Remember.BorderSize = 3;
             this.btn_No_Remember.FlatAppearance.BorderSize = 4;
             this.btn_No_Remember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_No_Remember.Font = new System.Drawing.Font("Consolas", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_No_Remember.Font = new System.Drawing.Font("Yu Gothic UI", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_No_Remember.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_No_Remember.Location = new System.Drawing.Point(914, 624);
             this.btn_No_Remember.Name = "btn_No_Remember";
@@ -156,7 +156,7 @@ namespace flashcard
             this.btn_Remember.BorderSize = 3;
             this.btn_Remember.FlatAppearance.BorderSize = 4;
             this.btn_Remember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Remember.Font = new System.Drawing.Font("Consolas", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Remember.Font = new System.Drawing.Font("Yu Gothic UI", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Remember.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Remember.Location = new System.Drawing.Point(242, 624);
             this.btn_Remember.Name = "btn_Remember";
@@ -184,6 +184,7 @@ namespace flashcard
             this.btn_Content.TabIndex = 9;
             this.btn_Content.TextColor = System.Drawing.Color.Black;
             this.btn_Content.UseVisualStyleBackColor = false;
+            this.btn_Content.Click += new System.EventHandler(this.btn_Content_Click);
             // 
             // frm_Review
             // 
@@ -200,7 +201,7 @@ namespace flashcard
             this.Controls.Add(this.btn_Remember);
             this.Controls.Add(this.menu);
             this.Name = "frm_Review";
-            this.Text = "frm_Review";
+            this.Text = "LDD App";
             this.Load += new System.EventHandler(this.frm_Review_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

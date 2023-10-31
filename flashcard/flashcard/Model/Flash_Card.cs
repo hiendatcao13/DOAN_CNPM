@@ -12,26 +12,26 @@ namespace flashcard.Model
         {
         }
 
-        public virtual DbSet<Account> Account { get; set; }
-        public virtual DbSet<Card> Card { get; set; }
-        public virtual DbSet<Category> Category { get; set; }
-        public virtual DbSet<Level> Level { get; set; }
+        public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<Card> Cards { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Level> Levels { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>()
-                .HasMany(e => e.Category)
+                .HasMany(e => e.Categories)
                 .WithRequired(e => e.Account)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Category>()
-                .HasMany(e => e.Card)
+                .HasMany(e => e.Cards)
                 .WithRequired(e => e.Category)
                 .HasForeignKey(e => e.Category_ID)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Level>()
-                .HasMany(e => e.Card)
+                .HasMany(e => e.Cards)
                 .WithRequired(e => e.Level)
                 .HasForeignKey(e => e.Level_ID)
                 .WillCascadeOnDelete(false);

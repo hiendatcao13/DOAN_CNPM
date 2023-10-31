@@ -33,19 +33,22 @@ namespace flashcard
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menu = new System.Windows.Forms.ToolStrip();
-            this.cmbTopic = new System.Windows.Forms.ComboBox();
             this.tabWord = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descibe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.image = new System.Windows.Forms.PictureBox();
+            this.txtlevel = new CustomControls.RJControls.RJButton();
+            this.btnLevel = new CustomControls.RJControls.RJButton();
+            this.cmbTopic = new flashcard.RJComboBox();
             this.txtWord = new CustomControls.RJControls.RJButton();
             this.txtDesc = new CustomControls.RJControls.RJTextBox();
             this.txtSearch = new CustomControls.RJControls.RJTextBox();
             this.btnDelete = new CustomControls.RJControls.RJButton();
             this.btnSave = new CustomControls.RJControls.RJButton();
             this.btnDesc = new CustomControls.RJControls.RJButton();
+            this.btnTest = new CustomControls.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabWord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image)).BeginInit();
             this.SuspendLayout();
@@ -53,27 +56,14 @@ namespace flashcard
             // menu
             // 
             this.menu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.menu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.menu.Size = new System.Drawing.Size(27, 1061);
+            this.menu.Size = new System.Drawing.Size(27, 690);
             this.menu.TabIndex = 0;
             this.menu.Text = "toolStrip1";
-            // 
-            // cmbTopic
-            // 
-            this.cmbTopic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(223)))), ((int)(((byte)(142)))));
-            this.cmbTopic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTopic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbTopic.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F);
-            this.cmbTopic.FormattingEnabled = true;
-            this.cmbTopic.Location = new System.Drawing.Point(100, 16);
-            this.cmbTopic.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbTopic.Name = "cmbTopic";
-            this.cmbTopic.Size = new System.Drawing.Size(361, 81);
-            this.cmbTopic.TabIndex = 1;
-            this.cmbTopic.SelectedIndexChanged += new System.EventHandler(this.cmbTopic_SelectedIndexChanged);
             // 
             // tabWord
             // 
@@ -89,13 +79,13 @@ namespace flashcard
             this.Column2});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(253)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Yu Gothic UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tabWord.DefaultCellStyle = dataGridViewCellStyle2;
-            this.tabWord.Location = new System.Drawing.Point(100, 212);
+            this.tabWord.Location = new System.Drawing.Point(147, 212);
             this.tabWord.Margin = new System.Windows.Forms.Padding(2);
             this.tabWord.Name = "tabWord";
             this.tabWord.ReadOnly = true;
@@ -109,7 +99,7 @@ namespace flashcard
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Yu Gothic UI", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column1.FillWeight = 1000F;
             this.Column1.HeaderText = "Vocabulary";
@@ -140,7 +130,7 @@ namespace flashcard
             // 
             // image
             // 
-            this.image.Location = new System.Drawing.Point(513, 267);
+            this.image.Location = new System.Drawing.Point(762, 267);
             this.image.Margin = new System.Windows.Forms.Padding(2);
             this.image.Name = "image";
             this.image.Size = new System.Drawing.Size(436, 296);
@@ -148,6 +138,64 @@ namespace flashcard
             this.image.TabIndex = 8;
             this.image.TabStop = false;
             this.image.Click += new System.EventHandler(this.image_Click);
+            // 
+            // txtlevel
+            // 
+            this.txtlevel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txtlevel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txtlevel.BorderColor = System.Drawing.Color.Black;
+            this.txtlevel.BorderRadius = 15;
+            this.txtlevel.BorderSize = 3;
+            this.txtlevel.FlatAppearance.BorderSize = 0;
+            this.txtlevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtlevel.Font = new System.Drawing.Font("Yu Gothic UI", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtlevel.ForeColor = System.Drawing.Color.Black;
+            this.txtlevel.Location = new System.Drawing.Point(892, 212);
+            this.txtlevel.Name = "txtlevel";
+            this.txtlevel.Size = new System.Drawing.Size(150, 40);
+            this.txtlevel.TabIndex = 19;
+            this.txtlevel.Text = "txtLevel";
+            this.txtlevel.TextColor = System.Drawing.Color.Black;
+            this.txtlevel.UseVisualStyleBackColor = false;
+            // 
+            // btnLevel
+            // 
+            this.btnLevel.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnLevel.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnLevel.BorderColor = System.Drawing.Color.Black;
+            this.btnLevel.BorderRadius = 20;
+            this.btnLevel.BorderSize = 3;
+            this.btnLevel.FlatAppearance.BorderSize = 0;
+            this.btnLevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLevel.ForeColor = System.Drawing.Color.Black;
+            this.btnLevel.Location = new System.Drawing.Point(1048, 212);
+            this.btnLevel.Name = "btnLevel";
+            this.btnLevel.Size = new System.Drawing.Size(150, 40);
+            this.btnLevel.TabIndex = 18;
+            this.btnLevel.Text = "Level";
+            this.btnLevel.TextColor = System.Drawing.Color.Black;
+            this.btnLevel.UseVisualStyleBackColor = false;
+            // 
+            // cmbTopic
+            // 
+            this.cmbTopic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(223)))), ((int)(((byte)(142)))));
+            this.cmbTopic.BorderColor = System.Drawing.Color.Black;
+            this.cmbTopic.BorderSize = 3;
+            this.cmbTopic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmbTopic.Font = new System.Drawing.Font("Yu Gothic UI", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTopic.ForeColor = System.Drawing.Color.Black;
+            this.cmbTopic.IconColor = System.Drawing.Color.Black;
+            this.cmbTopic.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cmbTopic.ListTextColor = System.Drawing.Color.DimGray;
+            this.cmbTopic.Location = new System.Drawing.Point(691, 102);
+            this.cmbTopic.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cmbTopic.Name = "cmbTopic";
+            this.cmbTopic.Padding = new System.Windows.Forms.Padding(3);
+            this.cmbTopic.Size = new System.Drawing.Size(538, 75);
+            this.cmbTopic.TabIndex = 17;
+            this.cmbTopic.Texts = "";
+            this.cmbTopic.UseWaitCursor = true;
+            this.cmbTopic.OnSelectedIndexChanged += new System.EventHandler(this.cmbTopic_SelectedIndexChanged);
             // 
             // txtWord
             // 
@@ -158,9 +206,9 @@ namespace flashcard
             this.txtWord.BorderSize = 3;
             this.txtWord.FlatAppearance.BorderSize = 0;
             this.txtWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 99.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWord.Font = new System.Drawing.Font("Yu Gothic UI", 99.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWord.ForeColor = System.Drawing.Color.Black;
-            this.txtWord.Location = new System.Drawing.Point(691, 106);
+            this.txtWord.Location = new System.Drawing.Point(736, 212);
             this.txtWord.Name = "txtWord";
             this.txtWord.Size = new System.Drawing.Size(150, 40);
             this.txtWord.TabIndex = 16;
@@ -173,11 +221,11 @@ namespace flashcard
             this.txtDesc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.txtDesc.BorderColor = System.Drawing.Color.Black;
             this.txtDesc.BorderFocusColor = System.Drawing.Color.Black;
-            this.txtDesc.BorderRadius = 30;
+            this.txtDesc.BorderRadius = 10;
             this.txtDesc.BorderSize = 3;
-            this.txtDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F);
-            this.txtDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDesc.Location = new System.Drawing.Point(499, 92);
+            this.txtDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesc.ForeColor = System.Drawing.Color.Black;
+            this.txtDesc.Location = new System.Drawing.Point(242, 317);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(4);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
@@ -197,9 +245,9 @@ namespace flashcard
             this.txtSearch.BorderFocusColor = System.Drawing.Color.Black;
             this.txtSearch.BorderRadius = 20;
             this.txtSearch.BorderSize = 3;
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.txtSearch.Font = new System.Drawing.Font("Yu Gothic UI", 30F);
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSearch.Location = new System.Drawing.Point(100, 137);
+            this.txtSearch.Location = new System.Drawing.Point(50, 108);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Multiline = false;
             this.txtSearch.Name = "txtSearch";
@@ -207,7 +255,7 @@ namespace flashcard
             this.txtSearch.PasswordChar = false;
             this.txtSearch.PlaceholderColor = System.Drawing.Color.Black;
             this.txtSearch.PlaceholderText = "";
-            this.txtSearch.Size = new System.Drawing.Size(359, 61);
+            this.txtSearch.Size = new System.Drawing.Size(538, 69);
             this.txtSearch.TabIndex = 14;
             this.txtSearch.Texts = "";
             this.txtSearch.UnderlinedStyle = false;
@@ -223,7 +271,7 @@ namespace flashcard
             this.btnDelete.FlatAppearance.BorderSize = 3;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(633, 578);
+            this.btnDelete.Location = new System.Drawing.Point(1086, 596);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 27);
             this.btnDelete.TabIndex = 12;
@@ -242,7 +290,7 @@ namespace flashcard
             this.btnSave.FlatAppearance.BorderSize = 3;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(499, 578);
+            this.btnSave.Location = new System.Drawing.Point(944, 596);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 27);
             this.btnSave.TabIndex = 12;
@@ -261,7 +309,7 @@ namespace flashcard
             this.btnDesc.FlatAppearance.BorderSize = 3;
             this.btnDesc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesc.ForeColor = System.Drawing.Color.Black;
-            this.btnDesc.Location = new System.Drawing.Point(523, 48);
+            this.btnDesc.Location = new System.Drawing.Point(786, 596);
             this.btnDesc.Name = "btnDesc";
             this.btnDesc.Size = new System.Drawing.Size(100, 27);
             this.btnDesc.TabIndex = 12;
@@ -269,12 +317,35 @@ namespace flashcard
             this.btnDesc.TextColor = System.Drawing.Color.Black;
             this.btnDesc.UseVisualStyleBackColor = false;
             // 
+            // btnTest
+            // 
+            this.btnTest.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnTest.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnTest.BorderColor = System.Drawing.Color.Black;
+            this.btnTest.BorderRadius = 20;
+            this.btnTest.BorderSize = 3;
+            this.btnTest.FlatAppearance.BorderSize = 0;
+            this.btnTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTest.ForeColor = System.Drawing.Color.Black;
+            this.btnTest.Location = new System.Drawing.Point(328, 614);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(150, 40);
+            this.btnTest.TabIndex = 20;
+            this.btnTest.Text = "rjButton1";
+            this.btnTest.TextColor = System.Drawing.Color.Black;
+            this.btnTest.UseVisualStyleBackColor = false;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            // 
             // frm_library
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(950, 1061);
+            this.ClientSize = new System.Drawing.Size(1259, 690);
+            this.Controls.Add(this.btnTest);
+            this.Controls.Add(this.txtlevel);
+            this.Controls.Add(this.btnLevel);
+            this.Controls.Add(this.cmbTopic);
             this.Controls.Add(this.txtWord);
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.txtSearch);
@@ -283,11 +354,10 @@ namespace flashcard
             this.Controls.Add(this.btnDesc);
             this.Controls.Add(this.image);
             this.Controls.Add(this.tabWord);
-            this.Controls.Add(this.cmbTopic);
             this.Controls.Add(this.menu);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_library";
-            this.Text = "frm_library";
+            this.Text = "LDD_App";
             this.Load += new System.EventHandler(this.frm_library_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabWord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image)).EndInit();
@@ -299,7 +369,6 @@ namespace flashcard
         #endregion
 
         private System.Windows.Forms.ToolStrip menu;
-        private System.Windows.Forms.ComboBox cmbTopic;
         private System.Windows.Forms.DataGridView tabWord;
         private System.Windows.Forms.PictureBox image;
         private CustomControls.RJControls.RJButton btnDesc;
@@ -312,5 +381,9 @@ namespace flashcard
         private System.Windows.Forms.DataGridViewTextBoxColumn Descibe;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private CustomControls.RJControls.RJButton txtWord;
+        private RJComboBox cmbTopic;
+        private CustomControls.RJControls.RJButton btnLevel;
+        private CustomControls.RJControls.RJButton txtlevel;
+        private CustomControls.RJControls.RJButton btnTest;
     }
 }

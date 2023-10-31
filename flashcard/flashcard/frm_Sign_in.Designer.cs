@@ -36,25 +36,26 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_Register = new System.Windows.Forms.Label();
+            this.btnShowPass = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 30F);
+            this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(449, 164);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 47);
+            this.label1.Size = new System.Drawing.Size(122, 54);
             this.label1.TabIndex = 2;
             this.label1.Text = "Login";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Yu Gothic UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(459, 222);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 32);
+            this.label2.Size = new System.Drawing.Size(148, 37);
             this.label2.TabIndex = 3;
             this.label2.Text = "User Name";
             // 
@@ -62,7 +63,7 @@
             // 
             this.txt_UserName.BackColor = System.Drawing.SystemColors.Window;
             this.txt_UserName.BorderColor = System.Drawing.Color.Black;
-            this.txt_UserName.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txt_UserName.BorderFocusColor = System.Drawing.Color.Black;
             this.txt_UserName.BorderRadius = 15;
             this.txt_UserName.BorderSize = 2;
             this.txt_UserName.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -104,18 +105,18 @@
             // 
             // btn_Sign_in
             // 
-            this.btn_Sign_in.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_Sign_in.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_Sign_in.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(253)))), ((int)(((byte)(232)))));
+            this.btn_Sign_in.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(253)))), ((int)(((byte)(232)))));
             this.btn_Sign_in.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Sign_in.BorderRadius = 18;
             this.btn_Sign_in.BorderSize = 3;
             this.btn_Sign_in.FlatAppearance.BorderSize = 0;
             this.btn_Sign_in.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Sign_in.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Sign_in.Font = new System.Drawing.Font("Yu Gothic UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sign_in.ForeColor = System.Drawing.Color.Black;
             this.btn_Sign_in.Location = new System.Drawing.Point(826, 455);
             this.btn_Sign_in.Name = "btn_Sign_in";
-            this.btn_Sign_in.Size = new System.Drawing.Size(188, 42);
+            this.btn_Sign_in.Size = new System.Drawing.Size(188, 48);
             this.btn_Sign_in.TabIndex = 6;
             this.btn_Sign_in.Text = "Sign in";
             this.btn_Sign_in.TextColor = System.Drawing.Color.Black;
@@ -125,17 +126,17 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(457, 323);
+            this.label3.Font = new System.Drawing.Font("Yu Gothic UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(459, 323);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 32);
+            this.label3.Size = new System.Drawing.Size(128, 37);
             this.label3.TabIndex = 7;
             this.label3.Text = "Password";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Yu Gothic UI", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(477, 522);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(294, 31);
@@ -145,13 +146,24 @@
             // lbl_Register
             // 
             this.lbl_Register.AutoSize = true;
-            this.lbl_Register.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Register.Location = new System.Drawing.Point(766, 522);
+            this.lbl_Register.Font = new System.Drawing.Font("Yu Gothic UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Register.Location = new System.Drawing.Point(762, 522);
             this.lbl_Register.Name = "lbl_Register";
-            this.lbl_Register.Size = new System.Drawing.Size(97, 32);
+            this.lbl_Register.Size = new System.Drawing.Size(100, 32);
             this.lbl_Register.TabIndex = 10;
             this.lbl_Register.Text = "Register";
             this.lbl_Register.Click += new System.EventHandler(this.lbl_Register_Click);
+            // 
+            // btnShowPass
+            // 
+            this.btnShowPass.AutoSize = true;
+            this.btnShowPass.Location = new System.Drawing.Point(912, 414);
+            this.btnShowPass.Name = "btnShowPass";
+            this.btnShowPass.Size = new System.Drawing.Size(102, 17);
+            this.btnShowPass.TabIndex = 12;
+            this.btnShowPass.Text = "Show Password";
+            this.btnShowPass.UseVisualStyleBackColor = true;
+            this.btnShowPass.CheckedChanged += new System.EventHandler(this.btnShowPass_Click);
             // 
             // frm_Sign_in
             // 
@@ -159,6 +171,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1257, 714);
+            this.Controls.Add(this.btnShowPass);
             this.Controls.Add(this.lbl_Register);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -168,7 +181,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frm_Sign_in";
-            this.Text = "frm_Sign_in";
+            this.Text = "LDD App";
             this.Load += new System.EventHandler(this.frm_Sign_in_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -185,5 +198,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbl_Register;
+        private System.Windows.Forms.CheckBox btnShowPass;
     }
 }

@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -37,7 +38,7 @@ namespace flashcard
         private void frm_library_Load(object sender, EventArgs e)
         {
             db = new Flash_Card();
-            account_id = db.Account.FirstOrDefault(p => p.Status == true).ID_Account;
+            account_id = db.Accounts.FirstOrDefault(p => p.Status == true).ID_Account;
             icon_logo();
             resize_form();
             getToolStrip();
@@ -49,11 +50,11 @@ namespace flashcard
         private void visible_property(bool check)
         {
             txtWord.Visible = txtDesc.Visible = image.Visible = btnDelete.Visible = btnSave.Visible
-                 = btnDesc.Visible = check;
+                 = btnDesc.Visible = txtlevel.Visible = btnLevel.Visible = btnTest.Visible= check;
         }
         private void fillCombobox()
         {
-            List<Category> categories = db.Category.Where(p => p.ID_Account == account_id).ToList();
+            List<Category> categories = db.Categories.Where(p => p.ID_Account == account_id).ToList();
             Category category = new Category();
             category.Name_Category = "<<All>>";
             categories.Insert(0, category);
@@ -83,7 +84,16 @@ namespace flashcard
             foreach (DataGridViewColumn column in tabWord.Columns)
                 column.Visible = true;
             tabWord.ColumnHeadersVisible = true;
-            BindGrid(db.Card.ToList());
+            account_id = db.Accounts.FirstOrDefault(p => p.Status == true).ID_Account;
+            List<Category> categories = db.Categories.Where(p => p.ID_Account == account_id).ToList();
+            List<Card> cards = db.Cards.ToList();
+            List<Card> temp = new List<Card>();
+            foreach (Card card in cards)
+                foreach (Category category in categories)
+                    if (card.Category_ID == category.ID_Category)
+                        temp.Add(card);
+            BindGrid(temp);
+            MessageBox.Show(temp.Count + "");
             return tabWord;
         }
         private void getToolStrip()
@@ -93,7 +103,7 @@ namespace flashcard
         }
         private void resize_form() // chỉnh lại tỷ lệ của form
         {
-            this.Width = 1500;
+            this.Width = 1440;
             this.Height = 1024;
             menu.Width = 96;
             menu.Height = this.Height;
@@ -103,30 +113,34 @@ namespace flashcard
         {
             btn.Location = new Point(X, Y);
             btn.Size = new Size(width, height);
-            btn.Font = new Font("Cofortaa", sizeFont);
+            btn.Font = new Font("Yu Gothic UI", sizeFont);
             btn.BackColor = color;
             btn.Text = text;
         }
         private void changeFormat()
         {
+            //59
             txtSearch.BringToFront();
             cmbTopic.Location = new Point(96, 25);
-            cmbTopic.Size = new Size(538, 59);
+            cmbTopic.Font = new Font("Yu Gothic UI", 30);
             tabWord.Location = new Point(96, 210);
-            tabWord.Size = new Size(538, 814);
+            tabWord.Size = new Size(538, 691);
             tabWord.BackgroundColor = lightgreen;
             image.Location = new Point(634, 579);
             image.Size = new Size(806, 322);
-            image.BackColor = lightpink;
+            image.BackColor = lightgreen;
             txtWord.Location = new Point(634, 25);
             txtWord.Size = new Size(805, 165);
             txtSearch.Location = new Point(96, 125);
-            txtSearch.Size = new Size(538, 59);
-            txtDesc.Location = new Point(927, 247);
-            txtDesc.Size = new Size(514, 274);
-            Format(btnDesc, 685, 358, 200, 74, 35, pink, "Desc");
-            Format(btnSave, 1048, 929, 186, 71, 35, pink, "Save");
-            Format(btnDelete, 847, 929, 186, 71, 35, pink, "Delete");
+            txtDesc.Location = new Point(895, 415);
+            txtDesc.Size = new Size(514, 116);
+            txtlevel.Location = new Point(895, 289);
+            txtlevel.Size = new Size(507, 91);
+            Format(btnDesc, 650, 440, 200, 74, 35, green, "Desc");
+            Format(btnSave, 1048, 929, 186, 71, 35, green, "Save");
+            Format(btnDelete, 847, 929, 186, 71, 35, green, "Delete");
+            Format(btnLevel, 650, 289, 200, 74, 35, green, "Level");
+            Format(btnTest, 272, 929, 186, 71, 35, green, "Test");
         }
         private void icon_logo() //tạo logo và có bo cong tròn
         {
@@ -156,10 +170,10 @@ namespace flashcard
             for (int i = 0; i < Application.OpenForms.Count; i++)
                 Application.OpenForms[i].Close();
         }
-        private List<Card> checkListCard()
+        public List<Card> checkListCard()
         {
-            List<Category> categories = db.Category.Where(p => p.ID_Account == account_id).ToList();
-            List<Card> cards = db.Card.ToList();
+            List<Category> categories = db.Categories.Where(p => p.ID_Account == account_id).ToList();
+            List<Card> cards = db.Cards.ToList();
             List<Card> temp = new List<Card>();
             foreach (Card card in cards)
                 foreach (Category category in categories)
@@ -173,34 +187,61 @@ namespace flashcard
         private void cmbTopic_SelectedIndexChanged(object sender, EventArgs e)
         {
             visible_property(false);
+            if (cmbTopic.SelectedIndex == 0)
+                btnTest.Visible = false;
+            else
+                btnTest.Visible = true;
             txtDesc.Texts = "";
             BindGrid(checkListCard());
         }
         private int getRowIndex = 0;
+        private int getTime(Card card)
+        {
+            Flash_Card db = new Flash_Card();
+            List<Level> levels = db.Levels.ToList();
+            foreach (var level_item in levels)
+                if (level_item.ID_Level == card.Level_ID)
+                    return level_item.Time;
+            return -1;
+        }
         private void tabWord_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             visible_property(true);
+            if (cmbTopic.SelectedIndex == 0)
+                btnTest.Visible = false;
+            else
+                btnTest.Visible = true;
             int index = getRowIndex = e.RowIndex;
             txtWord.Text = tabWord.Rows[index].Cells[0].Value.ToString();
-            Card card = db.Card.FirstOrDefault(p => p.Name_Card == txtWord.Text);
+            Card card = db.Cards.FirstOrDefault(p => p.Name_Card == txtWord.Text);
             txtDesc.Texts = card.Description;
             txtWord.Text = card.Name_Card;
+            DateTime date = card.Last_Modify.AddMinutes(getTime(card));
+            txtlevel.Text = card.Category_ID + "-" + date + "";
             if (card.Picture == null)
                 image.Image = null;
             else
                 load_ảnh(card);
         }
+        System.IO.FileStream fs;
         private void load_ảnh(Card card)
         {
-            image.Image = Image.FromFile(filePath + card.Picture);
+            fs = new System.IO.FileStream(filePath + card.Picture, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+            image.Image = System.Drawing.Image.FromStream(fs);
         }
         OpenFileDialog file;
         private void image_Click(object sender, EventArgs e)
         {
+            if (fs != null)
+                fs.Close();
             file = new OpenFileDialog();
             file.Filter = "Image File|*png;*jpg;*jpeg";
             if (file.ShowDialog() == DialogResult.OK)
-                image.Image = Image.FromFile(file.FileName);
+            {
+                fs = new System.IO.FileStream(file.FileName, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                image.Image = System.Drawing.Image.FromStream(fs);
+            }
+                
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -210,10 +251,13 @@ namespace flashcard
                 if (txtWord.Text == "" || txtDesc.Texts == "")
                     throw new Exception("Please fill all information !");
                 txtSearch.Texts = "";
-                Card card = db.Card.FirstOrDefault(p => p.Name_Card == txtWord.Text);
+                Card card = db.Cards.FirstOrDefault(p => p.Name_Card == txtWord.Text);
                 card.Description = txtDesc.Texts;
                 if (card.Picture != null)
+                {
+                    fs.Close();
                     File.Delete(filePath + card.Picture);
+                }
                 if(image.Image != null)
                 {
                     //Sửa lại tên file = tên textbox "word" với ngày giờ để tránh trùng tên (ví dụ record vừa là động từ vừa là danh từ)
@@ -223,7 +267,7 @@ namespace flashcard
                     //thuộc tính Picture chỉ lưu tên tấm ảnh
                     card.Picture = newimage_name;
                 }
-                db.Card.AddOrUpdate(card);
+                db.Cards.AddOrUpdate(card);
                 db.SaveChanges();
                 MessageBox.Show("Update word successfully !!!", "Congratulation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -254,7 +298,7 @@ namespace flashcard
                     txtSearch.Texts = "";
                     List<Card> cards = checkListCard();
                     Card card = cards.FirstOrDefault(p => p.Name_Card == txtWord.Text);
-                    db.Card.Remove(card);
+                    db.Cards.Remove(card);
                     db.SaveChanges();
                     MessageBox.Show("Delete flashcard successfully !!!", "Congratulation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     BindGrid(checkListCard());
@@ -265,7 +309,15 @@ namespace flashcard
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+                Application.OpenForms[i].Hide();
+            frm_test frm = new frm_test();
+            frm.getCard(checkListCard());
+            frm.ShowDialog();
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+                Application.OpenForms[i].Close();
+        }
     }
 }

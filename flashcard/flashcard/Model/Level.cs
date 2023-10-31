@@ -12,7 +12,7 @@ namespace flashcard.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Level()
         {
-            Card = new HashSet<Card>();
+            Cards = new HashSet<Card>();
         }
 
         [Key]
@@ -22,6 +22,6 @@ namespace flashcard.Model
         public int Time { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Card> Card { get; set; }
+        public virtual ICollection<Card> Cards { get; set; }
     }
 }

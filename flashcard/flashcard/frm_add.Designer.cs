@@ -47,6 +47,7 @@
             // menu
             // 
             this.menu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Size = new System.Drawing.Size(26, 966);
@@ -56,9 +57,9 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(253)))), ((int)(((byte)(232)))));
-            this.pictureBox1.Location = new System.Drawing.Point(610, 725);
+            this.pictureBox1.Location = new System.Drawing.Point(610, 627);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(367, 241);
+            this.pictureBox1.Size = new System.Drawing.Size(536, 339);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -69,8 +70,8 @@
             this.rjTextBox2.BorderColor = System.Drawing.Color.Black;
             this.rjTextBox2.BorderFocusColor = System.Drawing.Color.MediumAquamarine;
             this.rjTextBox2.BorderRadius = 15;
-            this.rjTextBox2.BorderSize = 2;
-            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox2.BorderSize = 3;
+            this.rjTextBox2.Font = new System.Drawing.Font("Consolas", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.rjTextBox2.Location = new System.Drawing.Point(610, 398);
             this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
@@ -80,7 +81,7 @@
             this.rjTextBox2.PasswordChar = false;
             this.rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.rjTextBox2.PlaceholderText = "";
-            this.rjTextBox2.Size = new System.Drawing.Size(733, 241);
+            this.rjTextBox2.Size = new System.Drawing.Size(733, 176);
             this.rjTextBox2.TabIndex = 10;
             this.rjTextBox2.Texts = "";
             this.rjTextBox2.UnderlinedStyle = false;
@@ -91,7 +92,7 @@
             this.rjComboBox1.BorderColor = System.Drawing.Color.Black;
             this.rjComboBox1.BorderSize = 3;
             this.rjComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjComboBox1.Font = new System.Drawing.Font("Yu Gothic UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjComboBox1.ForeColor = System.Drawing.Color.Black;
             this.rjComboBox1.IconColor = System.Drawing.Color.Black;
             this.rjComboBox1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
@@ -110,8 +111,8 @@
             this.rjTextBox1.BorderColor = System.Drawing.Color.Black;
             this.rjTextBox1.BorderFocusColor = System.Drawing.Color.MediumAquamarine;
             this.rjTextBox1.BorderRadius = 15;
-            this.rjTextBox1.BorderSize = 2;
-            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox1.BorderSize = 3;
+            this.rjTextBox1.Font = new System.Drawing.Font("Yu Gothic UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.rjTextBox1.Location = new System.Drawing.Point(610, 100);
             this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -135,9 +136,9 @@
             this.rjButton6.BorderSize = 3;
             this.rjButton6.FlatAppearance.BorderSize = 0;
             this.rjButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton6.Font = new System.Drawing.Font("Yu Gothic UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButton6.ForeColor = System.Drawing.Color.Black;
-            this.rjButton6.Location = new System.Drawing.Point(1010, 725);
+            this.rjButton6.Location = new System.Drawing.Point(1169, 627);
             this.rjButton6.Name = "rjButton6";
             this.rjButton6.Size = new System.Drawing.Size(55, 40);
             this.rjButton6.TabIndex = 7;
@@ -155,9 +156,9 @@
             this.rjButton5.BorderSize = 3;
             this.rjButton5.FlatAppearance.BorderSize = 0;
             this.rjButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton5.Font = new System.Drawing.Font("Yu Gothic", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton5.Font = new System.Drawing.Font("Yu Gothic UI", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButton5.ForeColor = System.Drawing.Color.Black;
-            this.rjButton5.Location = new System.Drawing.Point(1093, 897);
+            this.rjButton5.Location = new System.Drawing.Point(1239, 899);
             this.rjButton5.Name = "rjButton5";
             this.rjButton5.Size = new System.Drawing.Size(211, 67);
             this.rjButton5.TabIndex = 6;
@@ -175,9 +176,9 @@
             this.rjButton4.BorderSize = 3;
             this.rjButton4.FlatAppearance.BorderSize = 0;
             this.rjButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton4.Font = new System.Drawing.Font("Yu Gothic", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton4.Font = new System.Drawing.Font("Yu Gothic UI", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButton4.ForeColor = System.Drawing.Color.Black;
-            this.rjButton4.Location = new System.Drawing.Point(207, 721);
+            this.rjButton4.Location = new System.Drawing.Point(207, 627);
             this.rjButton4.Name = "rjButton4";
             this.rjButton4.Size = new System.Drawing.Size(273, 67);
             this.rjButton4.TabIndex = 5;
@@ -194,7 +195,7 @@
             this.rjButton3.BorderSize = 3;
             this.rjButton3.FlatAppearance.BorderSize = 0;
             this.rjButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton3.Font = new System.Drawing.Font("Yu Gothic", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton3.Font = new System.Drawing.Font("Yu Gothic UI", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButton3.ForeColor = System.Drawing.Color.Black;
             this.rjButton3.Location = new System.Drawing.Point(207, 398);
             this.rjButton3.Name = "rjButton3";
@@ -213,7 +214,7 @@
             this.rjButton2.BorderSize = 3;
             this.rjButton2.FlatAppearance.BorderSize = 0;
             this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton2.Font = new System.Drawing.Font("Yu Gothic", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton2.Font = new System.Drawing.Font("Yu Gothic UI", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButton2.ForeColor = System.Drawing.Color.Black;
             this.rjButton2.Location = new System.Drawing.Point(207, 249);
             this.rjButton2.Name = "rjButton2";
@@ -232,7 +233,7 @@
             this.rjButton1.BorderSize = 3;
             this.rjButton1.FlatAppearance.BorderSize = 0;
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.Font = new System.Drawing.Font("Yu Gothic", 45F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton1.Font = new System.Drawing.Font("Yu Gothic UI", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButton1.ForeColor = System.Drawing.Color.Black;
             this.rjButton1.Location = new System.Drawing.Point(207, 100);
             this.rjButton1.Name = "rjButton1";
@@ -247,7 +248,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1544, 799);
+            this.ClientSize = new System.Drawing.Size(1561, 808);
             this.Controls.Add(this.rjTextBox2);
             this.Controls.Add(this.rjComboBox1);
             this.Controls.Add(this.rjTextBox1);
@@ -261,7 +262,7 @@
             this.Controls.Add(this.menu);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "frm_add";
-            this.Text = "frm_add";
+            this.Text = "LDD App";
             this.Load += new System.EventHandler(this.frm_add_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
