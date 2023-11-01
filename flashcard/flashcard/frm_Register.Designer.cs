@@ -350,6 +350,7 @@
             this.Controls.Add(this.label1);
             this.Location = new System.Drawing.Point(455, 303);
             this.Name = "frm_Register";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LDD App";
             this.Load += new System.EventHandler(this.frm_Register_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorInput)).EndInit();

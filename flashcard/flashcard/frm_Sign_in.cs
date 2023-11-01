@@ -65,17 +65,22 @@ namespace flashcard
             string name = account.DisplayName;
             string password = account.Password;
             string context = "" +
-                "<html><body><h1> Xin chào bạn <mark>" + name + "</mark> thân mếm </h1>" +
-                "<p>Sau đây là mật khẩu của bạn <b style=\"background-color:black;font-size:150%;color:white;\">" + password + "</b></br></p>" +
-                "<p>Vui lòng không chi sẻ password này với bất kì ai." +
-                " Đặc biệt, đừng quên mật khẩu nữa nhé 😘😘😘</p>" +
+                "<html><body><h1> Xin chào bạn " + name +  " thân mến </h1>" +
+                "<p>Sau đây là mật khẩu của bạn <b style=\"background-color:black;font-size:150%;color:white;\">" + password + "</b></p>" +
+                "<p>Vui lòng không chia sẻ password này với bất kì ai.</p>" +
+                "<p>Đặc biệt, đừng quên mật khẩu nữa nhé 😘😘😘</p>" +
                 "<hr>" +
+                "<br>" +
+                "<small>" +
                 "<p>Nếu có những thắc mắc gì, xin vui lòng liên hệ thông tin dưới đây: </p>" +
-                "<p>Email liên hệ: dungdatling@gmail.com Số điện thoại: 0378793221 </p>" +
+                "<p>Email liên hệ: dungdatlinh@gmail.com " + 
+                "<br>" +
+                "Số điện thoại: 0378793221 </p>" +
                 "<p>Thư này đã được gửi đến <Email> đã được mã hóa.</p>" +
                 "<p>Để bảo vệ tài khoản của bạn, vui lòng không chuyển tiếp email này.</p>" +
-                "<img src = \"https://drive.google.com/uc?export=view&id=11-ogUr2l7eO1GC2CY0lpdGGaDvMl9tBE\" height = \"300\" width = \"300\">" +
-                "<p>Cảm ơn bạn vì đã tin tưởng sử dụng app LDD của chúng tôi. Xin cảm ơn <3 <3 </p>" +
+                "<div style = \"text-align: center;\">" +
+                "<img src = \"https://drive.google.com/uc?export=view&id=1DBc_0MqiEPbBT87t1ERSUxZ5HrEBUgOk\" height = \"300\" width = \"300\"></div>" +
+                "<p>Cảm ơn bạn vì đã tin tưởng sử dụng app LDD của chúng tôi. Xin cảm ơn <3 <3 </p></small>" +
                 "</body></html>";
             return context;
         }

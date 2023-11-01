@@ -119,6 +119,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(18, 16, 18, 16);
             this.Name = "frm_about";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LDD App";
             this.Load += new System.EventHandler(this.frm_about_Load);
             this.ResumeLayout(false);

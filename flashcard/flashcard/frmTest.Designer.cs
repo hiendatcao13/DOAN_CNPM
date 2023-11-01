@@ -126,6 +126,7 @@
             this.Controls.Add(this.txtCenter);
             this.Controls.Add(this.menu);
             this.Name = "frm_test";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LDD App";
             this.Load += new System.EventHandler(this.frmTest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.image)).EndInit();

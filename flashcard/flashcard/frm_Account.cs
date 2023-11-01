@@ -141,7 +141,13 @@ namespace flashcard
             Account acc = context.Accounts.ToList().Where(p => p.ID_Account == idAcc).FirstOrDefault();
             acc.Status = false;
             context.SaveChanges();
-            Environment.Exit(0);
+            for (int i = 0; i < System.Windows.Forms.Application.OpenForms.Count; i++)
+                System.Windows.Forms.Application.OpenForms[i].Hide();
+            frm_Sign_in frm = new frm_Sign_in();
+            frm.ShowDialog();
+            for (int i = 0; i < System.Windows.Forms.Application.OpenForms.Count; i++)
+                System.Windows.Forms.Application.OpenForms[i].Close();
+
         }
 
         private void txt_Password_MouseDoubleClick(object sender, MouseEventArgs e)

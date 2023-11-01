@@ -261,6 +261,7 @@
             this.Controls.Add(this.txt_Username);
             this.Controls.Add(this.txt_Display_Name);
             this.Name = "frm_Account";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LDD App";
             this.Load += new System.EventHandler(this.frm_Account_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

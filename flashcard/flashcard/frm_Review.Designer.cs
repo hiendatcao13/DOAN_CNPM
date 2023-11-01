@@ -201,6 +201,7 @@ namespace flashcard
             this.Controls.Add(this.btn_Remember);
             this.Controls.Add(this.menu);
             this.Name = "frm_Review";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LDD App";
             this.Load += new System.EventHandler(this.frm_Review_Load);
             this.ResumeLayout(false);

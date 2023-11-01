@@ -40,17 +40,17 @@ namespace flashcard
         private void resize_text()
         {
             txtDetails.Text = "This application applies spaced repetition method to help you remember knowledge scientifically.";
-            txtDetails.Font = new Font("Yu Gothic UI", 28);
+            txtDetails.Font = new Font("Yu Gothic UI", 24);
             txtDetails.Location = new Point(208, 196);
             txtDetails.Size = new Size(1157, 96);
             txtDetails.BackColor = SystemColors.ButtonFace;
             txtDetails2.Text = "What is spaced repetition and how does it work?\r\nSpaced repetition is a learning strategy where lessons are repeatedly reviewed at increasing intervals. The amount of information we retain is sharp in the first 20 minutes but slowly declines as hours and days go by reviewing the same lessons at increasing intervals, you are training your brain to keep a piece of information stored longer in your long-term memory.";
             txtDetails2.Location = new Point(216, 292);
             txtDetails2.Size = new Size(1094, 423);
-            txtDetails2.Font = new Font("Yu Gothic UI", 28);
+            txtDetails2.Font = new Font("Yu Gothic UI", 24);
             txtDetails2.BackColor = SystemColors.ButtonFace;
             txtThanks.Text = "THANK YOU FOR USING APP";
-            txtThanks.Location = new Point(414, 735);
+            txtThanks.Location = new Point(414, 710);
             txtThanks.Size = new Size(611, 120);
         }
 

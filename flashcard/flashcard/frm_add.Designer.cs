@@ -50,7 +50,7 @@
             this.menu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(26, 966);
+            this.menu.Size = new System.Drawing.Size(26, 968);
             this.menu.TabIndex = 0;
             this.menu.Text = "toolStrip1";
             // 
@@ -248,7 +248,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1561, 808);
+            this.ClientSize = new System.Drawing.Size(1424, 985);
             this.Controls.Add(this.rjTextBox2);
             this.Controls.Add(this.rjComboBox1);
             this.Controls.Add(this.rjTextBox1);
@@ -262,6 +262,7 @@
             this.Controls.Add(this.menu);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "frm_add";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LDD App";
             this.Load += new System.EventHandler(this.frm_add_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

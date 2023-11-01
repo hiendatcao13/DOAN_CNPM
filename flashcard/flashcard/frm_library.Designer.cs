@@ -61,7 +61,7 @@ namespace flashcard
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.menu.Size = new System.Drawing.Size(27, 690);
+            this.menu.Size = new System.Drawing.Size(27, 985);
             this.menu.TabIndex = 0;
             this.menu.Text = "toolStrip1";
             // 
@@ -341,7 +341,7 @@ namespace flashcard
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1259, 690);
+            this.ClientSize = new System.Drawing.Size(1424, 985);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.txtlevel);
             this.Controls.Add(this.btnLevel);
@@ -357,6 +357,7 @@ namespace flashcard
             this.Controls.Add(this.menu);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_library";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LDD_App";
             this.Load += new System.EventHandler(this.frm_library_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabWord)).EndInit();
